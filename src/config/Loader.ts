@@ -38,9 +38,7 @@ export default class Loader {
     );
   }
   async loadModals() {
-    return await getCollection<Modal>(
-      path.join(globalThis.__dirname, "models")
-    );
+    return await getCollection<Modal>(path.join(globalThis.__dirname, "ui"));
   }
 
   async onModalSubmit(interaction: ModalSubmitInteraction) {

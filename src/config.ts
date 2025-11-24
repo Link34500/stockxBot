@@ -1,6 +1,13 @@
 import { GatewayIntentBits, Partials } from "discord.js";
 import dotenv from "dotenv";
+import { PrismaPg } from "@prisma/adapter-pg";
+import { PrismaClient } from "@/generated/prisma/client";
 dotenv.config();
+
+const connectionString = `${process.env.DATABASE_URL}`;
+
+const adapter = new PrismaPg({ connectionString });
+export const prisma = new PrismaClient({ adapter });
 
 const config = {
   token: process.env.DISCORD_TOKEN!,

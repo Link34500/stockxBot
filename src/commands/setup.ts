@@ -1,5 +1,5 @@
 import Command from "@/config/Command";
-import EmailModal from "@/models/email";
+import EmailModal from "@/ui/email";
 import { ChatInputCommandInteraction } from "discord.js";
 
 export default class Setup extends Command {
