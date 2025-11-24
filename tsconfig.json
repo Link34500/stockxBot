@@ -2,7 +2,7 @@
   "compilerOptions": {
     "module": "esnext",
     "moduleResolution": "node",
-    "target": "es2023",
+    "target": "es2020",
     "lib": ["ES2022"],
     "strict": true,
     "rootDir": "src",

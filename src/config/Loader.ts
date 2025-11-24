@@ -24,8 +24,10 @@ export default class Loader {
     this.logger.info("Events Loaded");
     this.logger.info("Loading Commands...");
     this.client.commands = await this.loadCommands();
-    this.client.modals = await this.loadModals();
     this.logger.info("Commands Loaded");
+    this.logger.info("Loading Modals...");
+    this.client.modals = await this.loadModals();
+    this.logger.info("Modals Loaded");
   }
   async loadEvents() {
     return await getCollection<Event<any>>(

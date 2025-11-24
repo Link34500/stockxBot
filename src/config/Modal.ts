@@ -8,33 +8,39 @@ import {
 
 export class Field extends TextInputBuilder {
   constructor(
-    public id: string,
-    public label: string,
+    public forKey: string,
+    public text: string,
     public placeholder: string = "",
     public style: TextInputStyle = TextInputStyle.Short
   ) {
     super();
-    this.setCustomId(id)
+    this.setCustomId(forKey)
       .setStyle(style)
       .setPlaceholder(placeholder)
-      .setLabel(label);
+      .setLabel(text);
   }
 }
 
 export default abstract class Modal extends ModalBuilder {
-  abstract id: string;
-  abstract title: string;
-  abstract fields: Field[];
+  abstract id: string | Promise<string>;
+  abstract title: string | Promise<string>;
+  abstract fields: Field[] | Promise<Field[]>;
 
   constructor() {
     super();
   }
 
-  build() {
-    this.setCustomId(this.id);
-    this.setTitle(this.title);
+  async build() {
+    const id = await this.id;
+    const title = await this.title;
+    const fields = await this.fields;
+    this.setCustomId(id);
+    this.setTitle(title);
+
     this.setComponents(
-      this.fields.map((field) => new ActionRowBuilder().addComponents(field))
+      fields.map((field) =>
+        new ActionRowBuilder<TextInputBuilder>().addComponents(field)
+      )
     );
     return this;
   }

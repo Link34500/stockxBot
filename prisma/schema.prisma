@@ -48,6 +48,7 @@ model ArticleQuestion {
   id Int @id @default(autoincrement())
   text String
   forKey String @unique
+  placeholder String
 }
 
 model BillingInfoQuestion {
