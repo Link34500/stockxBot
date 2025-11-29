@@ -5,7 +5,9 @@ import { SlashCommandBuilder } from "discord.js";
 export default abstract class Command {
   abstract name: string;
   abstract description: string;
-  abstract execute(interaction: ChatInputCommandInteraction): Promise<void>;
+  abstract execute(
+    interaction: ChatInputCommandInteraction
+  ): Promise<void | any>;
   permissions?: bigint;
   autocompletes?: AutoComplete[];
 

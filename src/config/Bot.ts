@@ -1,16 +1,20 @@
 import { Client } from "discord.js";
 import config from "@/config";
 import Loader from "./Loader";
-import type { Collection } from "discord.js";
+import { Collection } from "discord.js";
 import Logger from "./Logger";
 import Command from "./Command";
-import Modal from "./Modal";
+import Modal from "@/components/Modal";
+import SelectMenu from "@/components/SelectMenu";
+import Button from "@/components/Button";
 
 const logger = new Logger({ prefix: "StockXBot", showDebug: false });
 
 export class Bot extends Client {
-  commands: Collection<string, Command> | undefined;
-  modals: Collection<string, Modal> | undefined;
+  commands = new Collection<string, Command>();
+  modals = new Collection<string, Modal>();
+  selectMenus = new Map<string, SelectMenu>();
+  buttons = new Map<string, Button>();
   loader: Loader;
   constructor() {
     super({ intents: config.intents });

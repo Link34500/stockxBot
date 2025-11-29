@@ -1,13 +1,18 @@
 import { GatewayIntentBits, Partials } from "discord.js";
 import dotenv from "dotenv";
-import { PrismaClient } from "@/generated/prisma/client";
+import { Prisma, PrismaClient } from "@/generated/prisma/client";
 import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
 dotenv.config();
 
+type User = Prisma.UserGetPayload<{}>;
+type Order = Prisma.OrderGetPayload<{}>;
+
 const adapter = new PrismaBetterSqlite3({ url: process.env.DATABASE_URL });
 export const prisma = new PrismaClient({ adapter });
+export const cacheOrders = new Map<string, Order>();
 
 const config = {
+  defaultColor: "#000000",
   token: process.env.DISCORD_TOKEN!,
   client_id: "1441239110680445108",
   guild: "1441239694724698225",
@@ -26,6 +31,6 @@ const config = {
     Partials.Message,
     Partials.Reaction,
   ],
-};
+} as const;
 
 export default config;

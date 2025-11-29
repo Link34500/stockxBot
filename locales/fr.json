@@ -1,0 +1,62 @@
+{
+  "generics": {
+    "sucess-mail-send": {
+      "title": "Email Envoyée Commande terminée",
+      "description": "L'email à bien été envoyée à la commande demander",
+      "color": "Green"
+    },
+    "confirm-order": {
+      "title": "Finaliser la commande",
+      "description": "Il ne vous reste plus qu'à finnaliser la commande !"
+    },
+    "order-timed-out": {
+      "title": "Commande expirée",
+      "description": "Votre commande a expiré après 30 secondes d'inactivité. Veuillez recommencer.",
+      "color": "#FF0000"
+    }
+  },
+  "commands": {
+    "generate": {
+      "marque-select": {
+        "placeholder": "Veuillez sélectionner une marque"
+      },
+      "ask-marque": {
+        "title": "Nouvelle commande",
+        "description": "Choisir une marque pour votre commande",
+        "color": "#0099ff"
+      },
+      "ask-billing-info": {
+        "title": "Informations de facturation",
+        "description": "Entrez les informations de facturation",
+        "color": "#0099ff"
+      }
+    }
+  },
+  "ui": {
+    "create-account": {
+      "sucess": {
+        "title": "Compte crée avec succès",
+        "description": "Vous pouvez maintenant passer des commandes",
+        "color": "#0099ff"
+      }
+    },
+    "billing-info": {
+      "sucess-send": {
+        "title": "Informations de facturation Enregistrer",
+        "description": "Vos informations de facturations on bien été enregistrer"
+      }
+    }
+  },
+  "errors": {
+    "not-order-found": {
+      "title": "Nous n'avons pas trouvée votre commande...",
+      "description": "Veuillez réassayer de crée votre commande. Une erreur est survenu nous ne l'avons pas trouvée",
+      "color": "#FF0000"
+    },
+    "not-account": {
+      "title": "Erreur",
+      "description": "Vous devez avoir un compte pour passer une commande",
+      "color": "#0099ff"
+    }
+  }
+}

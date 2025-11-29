@@ -1,0 +1,664 @@
+Delivered-To: rize.invoice1@gmail.com
+Received: by 2002:a54:2c06:0:b0:22b:f0d8:52b with SMTP id g6csp1941653ecp;
+        Sat, 28 Oct 2023 13:37:07 -0700 (PDT)
+X-Received: by 2002:a17:907:3ea7:b0:9a1:f10d:9746 with SMTP id hs39-20020a1709073ea700b009a1f10d9746mr4352609ejc.20.1698525426935;
+        Sat, 28 Oct 2023 13:37:06 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1698525426; cv=none;
+        d=google.com; s=arc-20160816;
+        b=dsbqwk2xNBokimxdXgHAISEw6o1iNwrhEDxMsOFy7SPJCYw06vgpqO0g6/bOEpf14X
+         nACuvDjoJQXHyBT6J0rapZdgVnAdmw8DzVkOlp+nWwR/kKjyDr6N8PLWZkD3L/o8GGUU
+         JJ05B9Piw/QTFsmDTZ+55BvFO1h5+L9Db4fo48NqilOhAT7KBN3rzW6oAmalUkK7IfIS
+         t/X2Vipzpf6u6N2hM4Bb04qknR7jGe6jVsePSKoxhL6O2qh3wTVqRNX/aBKHAxSYoJnF
+         CNbLTzIvgzGHwiCjT3B1JzWepK2Hpm2cn1aL7iwbZFRKKW9HmWSgQpXaG0Yg/7nNrKDv
+         3GEA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=FR93r+lSwJNGUdR2QMS55GN29aSn0iS9N/nwNjhIECc=;
+        fh=Q2G6m76/pud4lfvwBmh8hSHavoMTgSXASDcQps26XYs=;
+        b=zPypwRkR9tJE4Ex0B1niSMclrkNxtbO5/0cZIjdQyVHcbsSly625V0bG+7dRuAOJqg
+         LzFMRfh2XPjTS0SiJDUlpD/cXfMUwJaSgUGlsyoaSBVGECiqlOrOz5b7KvU8N5SvaRjI
+         HV0hG+CCsXOXsGSNfoXA460PLEn2HqC337LBFKLfs7VvCrKQ3tUG2/iX37TxW3o3+qgr
+         lm7sBTvpq+vLgOejluD6UN28MC3B9J8NsOOnHeXZT9Phka4GCQbM6TrLqOBfGgxOalai
+         keH1yz5xTlA3idqnw2mVwNyJSSemeWM4RnFZPxMYXW7BtHqpcn3ZdNFYvSAc/VHLLnpQ
+         /Rmw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b="XuNik/Tn";
+       spf=pass (google.com: domain of notryai511@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=notryai511@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <notryai511@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id cb24-20020a170906a45800b009ba12845bf0sor1325339ejb.1.2023.10.28.13.37.06
+        for <rize.invoice1@gmail.com>
+        (Google Transport Security);
+        Sat, 28 Oct 2023 13:37:06 -0700 (PDT)
+Received-SPF: pass (google.com: domain of notryai511@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b="XuNik/Tn";
+       spf=pass (google.com: domain of notryai511@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=notryai511@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1698525426; x=1699130226; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=FR93r+lSwJNGUdR2QMS55GN29aSn0iS9N/nwNjhIECc=;
+        b=XuNik/TnRmL086aHNzYj7MLTIPW+gBeU2bzKR9LrTKAzQFexqQfdw/Ws7XfbvBIUK3
+         jNh28o9DsQfXkGi/B/CsIBOoGTSrx8HJX6g2TdZ2YZ0jxqm7Haur5/BDnVJexQYJshbF
+         QgYC4iwgDTYB3vBgghyDdj4Zz+5K5DOap5hzxaOwfVjYkaND1hQ0A/cGxDcIcIe0nf3S
+         +6nOyT2cFqm0ne7D3vwSicLTKs38Dn0xKdLoMpIyVPOPxLD7mf9pWsGFSg6Gl+vWSyVn
+         lMQNGQDaO/+Q6Ho5ynmWC5JkUYI/o74nWGpb3HCxOkzrSd2WLKFnFEogGyWQ5hJpDwNE
+         rqsA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1698525426; x=1699130226;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=FR93r+lSwJNGUdR2QMS55GN29aSn0iS9N/nwNjhIECc=;
+        b=jo8kXRZqSzxOL1XUkkwDPsQ2yvY3FGAdo9M9YJEGTMdBn/Mz6k8aVaDuC4WokPRxvg
+         /PrhebqwDeDAtvDjzeZr8yArwy9wAlo5V2982ifbu3Z5irpEZgqr+hN+KJ5WWAFghGQJ
+         Dd5vr08r0T689oddur9LcwwWvHuRepqQhvCNMgPwL1aAwj3wMz0QesgyymFG3zUgTg/B
+         XnqL8ThKjwSZOJW/sbCr5eWBJJf1imGFcoJR3im1vKdJ1SEVXhXo6OJRMTzl3NCgSftN
+         pZNtjA07O3YVvS8inzKKXDB2hoIewnzAS3OscRYn7355Ky2Rar5+CHsxA2FdfmPZMgef
+         HYWQ==
+X-Gm-Message-State: AOJu0YxkoqChcPIZAmvO8iERdbVw25ZOWZEjlKj6aLs8EREjb/GYIMbV
+	i/tQvmgOV7ApCndLquC3EdJFcXveDw8ktyPajNqozQOxMaU=
+X-Google-Smtp-Source: AGHT+IFIjhiHgMxG2PuU6VMXJtecS4PDag29zYLQShkoQGRzmuASh9kGxtaqAlKIUqhG2OMnuLYxZkvh6HfU8elr4hw=
+X-Received: by 2002:a17:907:2d29:b0:9be:7dd3:40ab with SMTP id
+ gs41-20020a1709072d2900b009be7dd340abmr4975250ejc.2.1698525426156; Sat, 28
+ Oct 2023 13:37:06 -0700 (PDT)
+MIME-Version: 1.0
+From: noname noname <notryai511@gmail.com>
+Date: Sat, 28 Oct 2023 22:36:54 +0200
+Message-ID: <CA+sDWY38QCdQS2zUo4iHygfpDh1-7DxVBJWe-LAgT6=jK-DNAA@mail.gmail.com>
+Subject: 
+To: rize.invoice1@gmail.com
+Content-Type: multipart/alternative; boundary="000000000000ab09dc0608ccc48d"
+
+--000000000000ab09dc0608ccc48d
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<https://www.dyson.com/?utm_campaign=3Dtransact__c__notify__transactional-o=
+rder-confirmation-general-US&utm_source=3Dsap&utm_medium=3Demail>
+Order number: 4344169223
+Thank you! Your order has been placed
+Please see your order details below. Your order has been placed and is
+currently processing. If you have any questions regarding your order,
+please use the =E2=80=98Contact us=E2=80=99 button at the bottom of this em=
+ail.
+
+
+Delivery address
+Noelia Ligny
+8 avenue du parc
+villeparisis
+77270, France
+Billing address
+Noelia Ligny
+8 avenue du parc
+villeparisis
+ 77270, France \
+Your order details
+[image: image.png]
+
+S=C3=A8che-cheveux Dyson Supersonic=E2=84=A2 Gris/Fuchsia
+Qty: 1
+Price: =E2=82=AC 399.00
+Payment will be taken when the order is shipped.
+PayPal payment will be taken at the time of purchase.
+Delivery:
+Subtotal:
+Tax:
+Order total (inc. Tax):
+Discount:
+=E2=82=AC 0.00
+=E2=82=AC 399.00
+=E2=82=AC 79.80
+=E2=82=AC 478.80
+=E2=82=AC 0.00
+
+Once an order has been placed, it cannot be amended. Dyson gladly accepts
+returns in accordance to the Dyson Store Returns Policy
+<https://www.dyson.com/inside-dyson/terms/returns-policy.html>. Please
+visit our returns page
+<https://www.dyson.com/inside-dyson/terms/returns-policy.html> for more
+information or to begin the return process.
+Refurbished machines as well as tools, parts and accessories will ship
+separately and will be delivered within 5-7 business days.
+Get the most out of your machine by signing up for maintenance reminders
+and special offers when you update your preferences on My Dyson
+<https://www.dyson.com/your-dyson.html>.
+Discover maintenance guides, how-to videos and more by visiting the
+Dyson Support
+Page <https://www.dyson.com/support/journey/overview.html>.
+What happens next
+We will send you another email when your order has been shipped.
+Contacting us is easy
+If you have any questions about your order, a Dyson Expert is on hand to
+help.
+Contact us
+<https://www.dyson.com/support/contact-us?utm_campaign=3Dtransact__c__notif=
+y__transactional-order-confirmation-general-US&utm_source=3Dsap&utm_medium=
+=3Demail>
+<https://www.dyson.com/?utm_campaign=3Dtransact__c__notify__transactional-o=
+rder-confirmation-general-US&utm_source=3Dsap&utm_medium=3Demail>
+
+You've received this email because you recently purchased a Dyson machine.
+Unless requested, you have not been added to any marketing list. We explain
+how we use your personal information in our Privacy policy
+<https://privacy.dyson.com/homepage.aspx?utm_campaign=3Dtransact__c__notify=
+__transactional-order-confirmation-general-US&utm_source=3Dsap&utm_medium=
+=3Demail>.
+If you think you have received this email in error, please contact us.
+Dyson Inc. 1330 West Fulton Street, 5th Floor, Chicago, Illinois 60607.
+
+--000000000000ab09dc0608ccc48d
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><table align=3D"center" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" style=3D"border-collapse:collapse;background:rgb(0,0,0);widt=
+h:1330.67px"><tbody><tr><td style=3D"border-collapse:collapse"><div style=
+=3D"margin:0px auto;max-width:640px"><table align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse:collapse;width:=
+640px"><tbody><tr><td style=3D"border-collapse:collapse;direction:ltr;font-=
+size:0px;padding:0px;text-align:center"><div style=3D"margin:0px auto;max-w=
+idth:640px"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" style=3D"border-collapse:collapse;width:640px"><tbody><tr><td sty=
+le=3D"border-collapse:collapse;direction:ltr;padding:20px 5px 3px"><div sty=
+le=3D"max-width:100%;width:630px;line-height:0;text-align:left;display:inli=
+ne-block;direction:ltr"><div style=3D"max-width:32%;width:201.597px;directi=
+on:ltr;display:inline-block;vertical-align:top"><table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-collapse:collap=
+se"><tbody><tr><td style=3D"border-collapse:collapse;vertical-align:top;pad=
+ding:0px 0px 0px 15px"><table border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"100%" style=3D"border-collapse:collapse"><tbody><tr><td align=
+=3D"left" style=3D"border-collapse:collapse;padding:0px 0px 10px;word-break=
+:break-word"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"border-collapse:collapse;border-spacing:0px"><tbody><tr><td style=3D"bo=
+rder-collapse:collapse;width:70px"><a href=3D"https://www.dyson.com/?utm_ca=
+mpaign=3Dtransact__c__notify__transactional-order-confirmation-general-US&a=
+mp;utm_source=3Dsap&amp;utm_medium=3Demail" target=3D"_blank"><img alt=3D""=
+ height=3D"27" src=3D"https://dyson-h.assetsadobe2.com/is/image//content/da=
+m/dyson/oe-team-email-assets/mjml-master-template-assets/dyson-logo-header-=
+light-x2.png?scl=3D1&amp;fmt=3Dpng-alpha" width=3D"70" class=3D"gmail-CToWU=
+d" style=3D"border: 0px; height: 27px; line-height: 13px; outline: none; te=
+xt-decoration-line: none; display: block; width: 70px; font-size: 13px;"></=
+a></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></t=
+able></div></div></td></tr></tbody></table></div></td></tr></tbody></table>=
+</div></td></tr></tbody></table><table align=3D"center" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" style=3D"border-collapse:collapse;background:=
+rgb(251,251,251);width:1330.67px"><tbody><tr><td style=3D"border-collapse:c=
+ollapse"><div style=3D"margin:0px auto;max-width:640px"><table align=3D"cen=
+ter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-colla=
+pse:collapse;width:640px"><tbody><tr><td style=3D"border-collapse:collapse;=
+direction:ltr;font-size:0px;padding:0px;text-align:center"><div style=3D"ma=
+rgin:0px auto;max-width:640px"><table align=3D"center" border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" style=3D"border-collapse:collapse;width:640px"=
+><tbody><tr><td style=3D"border-collapse:collapse;direction:ltr;padding:15p=
+x 5px 0px"><div style=3D"max-width:100%;width:630px;text-align:left;directi=
+on:ltr;display:inline-block;vertical-align:top"><table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-collapse:collap=
+se"><tbody><tr><td style=3D"border-collapse:collapse;vertical-align:top;pad=
+ding:0px 15px 5px"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+width=3D"100%" style=3D"border-collapse:collapse"><tbody><tr><td align=3D"l=
+eft" style=3D"border-collapse:collapse;padding:0px 0px 10px;word-break:brea=
+k-word"><div style=3D"font-family:DysonFutura,Arial,Helvetica,sans-serif;fo=
+nt-size:14px;line-height:18px;color:rgb(51,51,51)">Order number: 4344169223=
+</div></td></tr></tbody></table></td></tr></tbody></table></div></td></tr><=
+/tbody></table></div></td></tr></tbody></table></div></td></tr></tbody></ta=
+ble><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" style=3D"border-collapse:collapse;background-image:initial;background-pos=
+ition:initial;background-size:initial;background-repeat:initial;background-=
+origin:initial;background-clip:initial;width:1330.67px"><tbody><tr><td styl=
+e=3D"border-collapse:collapse"><div style=3D"margin:0px auto;max-width:640p=
+x"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ style=3D"border-collapse:collapse;width:640px"><tbody><tr><td style=3D"bor=
+der-collapse:collapse;direction:ltr;font-size:0px;padding:0px;text-align:ce=
+nter"><div style=3D"margin:0px auto;max-width:640px"><table align=3D"center=
+" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse=
+:collapse;width:640px"><tbody><tr><td style=3D"border-collapse:collapse;dir=
+ection:ltr;padding:30px 5px 0px"><div style=3D"max-width:460px;width:460px;=
+text-align:left;direction:ltr;display:inline-block;vertical-align:top"><tab=
+le border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D=
+"border-collapse:collapse"><tbody><tr><td style=3D"border-collapse:collapse=
+;vertical-align:top;padding:0px 15px 20px"><table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-collapse:collapse">=
+<tbody><tr><td align=3D"left" style=3D"border-collapse:collapse;padding:0px=
+ 0px 20px;word-break:break-word"><div style=3D"font-family:DysonFutura,Aria=
+l,Helvetica,sans-serif;font-size:24px;line-height:30px;color:rgb(51,51,51)"=
+>Thank you! Your order has been placed</div></td></tr><tr><td align=3D"left=
+" style=3D"border-collapse:collapse;padding:0px 0px 10px;word-break:break-w=
+ord"><div style=3D"font-family:DysonFutura,Arial,Helvetica,sans-serif;font-=
+size:14px;line-height:18px;color:rgb(51,51,51)">Please see your order detai=
+ls below. Your order has been placed and is currently processing. If you ha=
+ve any questions regarding your order, please use the =E2=80=98Contact us=
+=E2=80=99 button at the bottom of this email.</div></td></tr></tbody></tabl=
+e></td></tr></tbody></table></div></td></tr></tbody></table></div></td></tr=
+></tbody></table></div></td></tr></tbody></table><table align=3D"center" bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse:col=
+lapse;background:rgb(251,251,251);width:1330.67px"><tbody><tr><td style=3D"=
+border-collapse:collapse"><div style=3D"margin:0px auto;max-width:640px"><t=
+able align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"border-collapse:collapse;width:640px"><tbody><tr><td style=3D"border-c=
+ollapse:collapse;direction:ltr;font-size:0px;padding:0px;text-align:center"=
+><div style=3D"margin:0px auto;max-width:640px"><table align=3D"center" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse:coll=
+apse;width:640px"><tbody><tr><td style=3D"border-collapse:collapse;directio=
+n:ltr;padding:30px 5px 0px"><div style=3D"max-width:50%;width:315px;text-al=
+ign:left;direction:ltr;display:inline-block;vertical-align:top"><table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border=
+-collapse:collapse"><tbody><tr><td style=3D"border-collapse:collapse;vertic=
+al-align:top;padding:0px 15px 20px">=C2=A0=C2=A0<table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-collapse:collap=
+se"><tbody><tr><td align=3D"left" style=3D"border-collapse:collapse;padding=
+:0px 0px 10px;word-break:break-word"><div style=3D"font-family:DysonFutura,=
+Arial,Helvetica,sans-serif;font-size:18px;line-height:24px;color:rgb(51,51,=
+51)">Delivery address</div></td></tr><tr><td align=3D"left" style=3D"border=
+-collapse:collapse;padding:0px 0px 10px;word-break:break-word"><div style=
+=3D"font-family:DysonFutura,Arial,Helvetica,sans-serif;font-size:14px;line-=
+height:18px;color:rgb(51,51,51)"><span style=3D"font-size:10pt;font-family:=
+Arial">Noelia Ligny=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0</span></div><div style=3D"lin=
+e-height:18px;color:rgb(51,51,51)"><font face=3D"Arial"><span style=3D"font=
+-size:13.3333px">8 avenue du parc</span></font></div><div style=3D"line-hei=
+ght:18px;color:rgb(51,51,51)"><span style=3D"font-family:Arial;font-size:10=
+pt">villeparisis</span></div><div style=3D"line-height:18px;color:rgb(51,51=
+,51)"><font face=3D"Arial"><span style=3D"font-size:13.3333px">77270, Franc=
+e</span></font></div></td></tr></tbody></table></td></tr></tbody></table></=
+div><div style=3D"max-width:50%;width:315px;text-align:left;direction:ltr;d=
+isplay:inline-block;vertical-align:top"><table border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" width=3D"100%" style=3D"border-collapse:collapse"><tbo=
+dy><tr><td style=3D"border-collapse:collapse;vertical-align:top;padding:0px=
+ 15px 20px"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"border-collapse:collapse"><tbody><tr><td align=3D"left" =
+style=3D"border-collapse:collapse;padding:0px 0px 10px;word-break:break-wor=
+d"><div style=3D"font-family:DysonFutura,Arial,Helvetica,sans-serif;font-si=
+ze:18px;line-height:24px;color:rgb(51,51,51)">Billing address</div></td></t=
+r><tr><td align=3D"left" style=3D"border-collapse:collapse;padding:0px 0px =
+10px;word-break:break-word"><div style=3D"font-family:DysonFutura,Arial,Hel=
+vetica,sans-serif;font-size:14px;line-height:18px;color:rgb(51,51,51)"><div=
+ style=3D"line-height:18px"><span style=3D"font-family:Arial;font-size:13.3=
+333px">Noelia Ligny=C2=A0</span><span style=3D"font-family:Arial;font-size:=
+10pt">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=C2=
+=A0</span></div><div style=3D"font-family:Arial,Helvetica,sans-serif;font-s=
+ize:0px;line-height:18px"><span style=3D"font-family:Arial;font-size:13.333=
+3px">8 avenue du parc</span></div><div style=3D"font-family:Arial,Helvetica=
+,sans-serif;font-size:0px;line-height:18px"><span style=3D"font-family:Aria=
+l;font-size:13.3333px">villeparisis</span></div><div style=3D"font-family:A=
+rial,Helvetica,sans-serif;font-size:0px;line-height:18px">=C2=A0<span style=
+=3D"font-family:Arial;font-size:13.3333px">77270, France</span>=C2=A0\=C2=
+=A0</div></div></td></tr></tbody></table></td></tr></tbody></table></div></=
+td></tr></tbody></table></div></td></tr></tbody></table></div></td></tr></t=
+body></table><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" style=3D"border-collapse:collapse;background-image:initial;backg=
+round-position:initial;background-size:initial;background-repeat:initial;ba=
+ckground-origin:initial;background-clip:initial;width:1330.67px"><tbody><tr=
+><td style=3D"border-collapse:collapse"><div style=3D"margin:0px auto;max-w=
+idth:640px"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" style=3D"border-collapse:collapse;width:640px"><tbody><tr><td sty=
+le=3D"border-collapse:collapse;direction:ltr;font-size:0px;padding:0px;text=
+-align:center"><div style=3D"margin:0px auto;max-width:640px"><table align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"borde=
+r-collapse:collapse;width:640px"><tbody><tr><td style=3D"border-collapse:co=
+llapse;direction:ltr;padding:30px 5px 0px"><div style=3D"max-width:100%;wid=
+th:630px;text-align:left;direction:ltr;display:inline-block;vertical-align:=
+top"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ style=3D"border-collapse:collapse"><tbody><tr><td style=3D"border-collapse=
+:collapse;vertical-align:top;padding:0px 15px 20px"><table border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-collapse:co=
+llapse"><tbody><tr><td align=3D"left" style=3D"border-collapse:collapse;pad=
+ding:0px;word-break:break-word"><div style=3D"font-family:DysonFutura,Arial=
+,Helvetica,sans-serif;font-size:21px;line-height:27px;color:rgb(51,51,51)">=
+Your order details</div></td></tr></tbody></table></td></tr></tbody></table=
+></div></td></tr></tbody></table></div></td></tr></tbody></table></div></td=
+></tr></tbody></table><table align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" style=3D"border-collapse:collapse;background-image:init=
+ial;background-position:initial;background-size:initial;background-repeat:i=
+nitial;background-origin:initial;background-clip:initial;width:1330.67px"><=
+tbody><tr><td style=3D"border-collapse:collapse"><div style=3D"margin:0px a=
+uto;max-width:640px"><table align=3D"center" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" style=3D"border-collapse:collapse;width:640px"><tbody><t=
+r><td style=3D"border-collapse:collapse;direction:ltr;font-size:0px;padding=
+:5px 15px 0px;text-align:center"><div style=3D"background:rgb(251,251,251);=
+margin:0px auto;max-width:610px"><table align=3D"center" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" style=3D"border-collapse:collapse;background=
+-image:initial;background-position:initial;background-size:initial;backgrou=
+nd-repeat:initial;background-origin:initial;background-clip:initial;width:6=
+10px"><tbody><tr><td style=3D"border-collapse:collapse;direction:ltr;paddin=
+g:30px 5px 0px"><div style=3D"max-width:100%;width:600px;line-height:0;text=
+-align:left;display:inline-block;direction:ltr"><div style=3D"direction:ltr=
+;display:inline-block;vertical-align:top;width:240px"><table border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-collapse:=
+collapse"><tbody><tr><td style=3D"border-collapse:collapse;vertical-align:t=
+op;padding:0px"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wid=
+th=3D"100%" style=3D"border-collapse:collapse"><tbody><tr><td align=3D"left=
+" style=3D"border-collapse:collapse;padding:0px;word-break:break-word"><tab=
+le border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collaps=
+e:collapse;border-spacing:0px"><tbody><tr><td style=3D"border-collapse:coll=
+apse;width:235px"></td></tr></tbody></table><img src=3D"https://dyson-h.ass=
+etsadobe2.com/is/image/content/dam/dyson/images/products/hero/386732-01.png=
+?$responsive$&amp;cropPathE=3Ddesktop&amp;fit=3Dstretch,1&amp;wid=3D576" al=
+t=3D"image.png" width=3D"230" class=3D"gmail-CToWUd gmail-a6T" tabindex=3D"=
+0" style=3D"cursor: pointer; outline: 0px; margin-right: 0px;"><div dir=3D"=
+ltr" style=3D"opacity:0.01"><div id=3D"m_-5421927503463967246m_-90211110978=
+00060011:219" title=3D"=D0=9F=D0=BE=D0=B8=D1=81=D0=BA =D0=B2=D0=B8=D1=80=D1=
+=83=D1=81=D0=BE=D0=B2=E2=80=A6" role=3D"button" aria-label=3D"=D0=A1=D0=BA=
+=D0=B0=D1=87=D0=B0=D1=82=D1=8C =D1=84=D0=B0=D0=B9=D0=BB image.png"><div><di=
+v></div></div></div><div id=3D"m_-5421927503463967246m_-9021111097800060011=
+:21a" title=3D"=D0=94=D0=BE=D0=B1=D0=B0=D0=B2=D0=B8=D1=82=D1=8C =D0=BD=D0=
+=B0 =D0=94=D0=B8=D1=81=D0=BA" role=3D"button" aria-label=3D"=D0=94=D0=BE=D0=
+=B1=D0=B0=D0=B2=D0=B8=D1=82=D1=8C =D1=84=D0=B0=D0=B9=D0=BB &quot;image.png&=
+quot; =D0=BD=D0=B0 =D0=94=D0=B8=D1=81=D0=BA"><div><div><div><div></div><div=
+></div></div></div></div></div><div id=3D"m_-5421927503463967246m_-90211110=
+97800060011:21c" role=3D"button" aria-label=3D"=D0=A1=D0=BE=D1=85=D1=80=D0=
+=B0=D0=BD=D0=B8=D1=82=D1=8C =D0=BA=D0=BE=D0=BF=D0=B8=D1=8E =D0=B2 =D0=A4=D0=
+=BE=D1=82=D0=BE"><div><div></div></div></div></div><br></td></tr></tbody></=
+table></td></tr></tbody></table></div><div style=3D"direction:ltr;display:i=
+nline-block;vertical-align:top;width:360px"><table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-collapse:collapse">=
+<tbody><tr><td style=3D"border-collapse:collapse;vertical-align:top;padding=
+:0px 15px 20px"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wid=
+th=3D"100%" style=3D"border-collapse:collapse"><tbody><tr><td align=3D"left=
+" style=3D"border-collapse:collapse;padding:0px 0px 10px;word-break:break-w=
+ord"><div style=3D"font-family:DysonFutura,Arial,Helvetica,sans-serif;font-=
+size:14px;line-height:18px;color:rgb(51,51,51)">S=C3=A8che-cheveux Dyson Su=
+personic=E2=84=A2 Gris/Fuchsia</div></td></tr><tr><td align=3D"left" style=
+=3D"border-collapse:collapse;padding:0px 0px 10px;word-break:break-word"><d=
+iv style=3D"font-family:DysonFutura,Arial,Helvetica,sans-serif;font-size:14=
+px;line-height:18px;color:rgb(153,153,153)">Qty: 1</div></td></tr><tr><td a=
+lign=3D"left" style=3D"border-collapse:collapse;padding:0px 0px 10px;word-b=
+reak:break-word"><div style=3D"font-family:DysonFutura,Arial,Helvetica,sans=
+-serif;font-size:14px;line-height:18px;color:rgb(51,51,51)">Price:=C2=A0=E2=
+=82=AC 399.00</div></td></tr></tbody></table></td></tr></tbody></table></di=
+v></div></td></tr></tbody></table></div></td></tr></tbody></table></div></t=
+d></tr></tbody></table><table align=3D"center" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" style=3D"border-collapse:collapse;background-image:ini=
+tial;background-position:initial;background-size:initial;background-repeat:=
+initial;background-origin:initial;background-clip:initial;width:1330.67px">=
+<tbody><tr><td style=3D"border-collapse:collapse"><div style=3D"margin:0px =
+auto;max-width:640px"><table align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" style=3D"border-collapse:collapse;width:640px"><tbody><=
+tr><td style=3D"border-collapse:collapse;direction:ltr;font-size:0px;paddin=
+g:0px;text-align:center"><div style=3D"margin:0px auto;max-width:640px"><ta=
+ble align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"border-collapse:collapse;width:640px"><tbody><tr><td style=3D"border-co=
+llapse:collapse;direction:ltr;padding:30px 5px 0px"><div style=3D"max-width=
+:100%;width:630px;text-align:left;direction:ltr;display:inline-block;vertic=
+al-align:top"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"border-collapse:collapse"><tbody><tr><td style=3D"border=
+-collapse:collapse;vertical-align:top;padding:0px 15px 20px"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-c=
+ollapse:collapse"><tbody><tr><td align=3D"left" style=3D"border-collapse:co=
+llapse;padding:0px 0px 10px;word-break:break-word"><div style=3D"font-famil=
+y:DysonFutura,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;co=
+lor:rgb(153,153,153)">Payment will be taken when the order is shipped.</div=
+></td></tr><tr><td align=3D"left" style=3D"border-collapse:collapse;padding=
+:0px 0px 10px;word-break:break-word"><div style=3D"font-family:DysonFutura,=
+Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;color:rgb(153,15=
+3,153)">PayPal payment will be taken at the time of purchase.</div></td></t=
+r></tbody></table></td></tr></tbody></table></div></td></tr></tbody></table=
+></div><div style=3D"margin:0px auto;max-width:640px"><table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collaps=
+e:collapse;width:640px"><tbody><tr><td style=3D"border-collapse:collapse;di=
+rection:ltr;padding:10px 5px 0px"><div style=3D"max-width:100%;width:630px;=
+line-height:0;text-align:left;display:inline-block;direction:ltr"><div styl=
+e=3D"max-width:50%;width:315px;direction:ltr;display:inline-block;vertical-=
+align:top"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-collapse:collapse"><tbody><tr><td style=3D"border-co=
+llapse:collapse;vertical-align:top;padding:0px 15px 20px"><table border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-colla=
+pse:collapse"><tbody><tr><td align=3D"left" style=3D"border-collapse:collap=
+se;padding:0px 0px 10px;word-break:break-word"><div style=3D"font-family:Dy=
+sonFutura,Arial,Helvetica,sans-serif;font-size:14px;line-height:18px;color:=
+rgb(153,153,153)">Delivery:</div></td></tr><tr><td style=3D"border-collapse=
+:collapse"></td></tr><tr><td align=3D"left" style=3D"border-collapse:collap=
+se;padding:0px 0px 10px;word-break:break-word"><div style=3D"font-family:Dy=
+sonFutura,Arial,Helvetica,sans-serif;font-size:14px;line-height:18px;color:=
+rgb(153,153,153)">Subtotal:</div></td></tr><tr><td align=3D"left" style=3D"=
+border-collapse:collapse;padding:0px 0px 10px;word-break:break-word"><div s=
+tyle=3D"font-family:DysonFutura,Arial,Helvetica,sans-serif;font-size:14px;l=
+ine-height:18px;color:rgb(153,153,153)">Tax:</div></td></tr><tr><td align=
+=3D"left" style=3D"border-collapse:collapse;padding:10px 0px;word-break:bre=
+ak-word"><div style=3D"font-family:DysonFutura,Arial,Helvetica,sans-serif;f=
+ont-size:18px;line-height:24px;color:rgb(51,51,51)">Order total (inc. Tax):=
+</div></td></tr><tr><td align=3D"left" style=3D"border-collapse:collapse;pa=
+dding:0px 0px 10px;word-break:break-word"><div style=3D"font-family:DysonFu=
+tura,Arial,Helvetica,sans-serif;font-size:14px;line-height:18px;color:rgb(0=
+,102,204)">Discount:</div></td></tr></tbody></table></td></tr></tbody></tab=
+le></div><div style=3D"max-width:50%;width:315px;direction:ltr;display:inli=
+ne-block;vertical-align:top"><table border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" width=3D"100%" style=3D"border-collapse:collapse"><tbody><tr><td =
+style=3D"border-collapse:collapse;vertical-align:top;padding:0px 15px 20px"=
+><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" sty=
+le=3D"border-collapse:collapse"><tbody><tr><td align=3D"right" style=3D"bor=
+der-collapse:collapse;padding:0px 0px 10px;word-break:break-word"><div styl=
+e=3D"font-family:DysonFutura,Arial,Helvetica,sans-serif;font-size:14px;line=
+-height:18px;color:rgb(153,153,153)">=E2=82=AC 0.00</div></td></tr><tr><td =
+align=3D"right" style=3D"border-collapse:collapse;padding:0px 0px 10px;word=
+-break:break-word"><div style=3D"font-family:DysonFutura,Arial,Helvetica,sa=
+ns-serif;font-size:14px;line-height:18px;color:rgb(153,153,153)">=E2=82=AC =
+399.00</div></td></tr><tr><td align=3D"right" style=3D"border-collapse:coll=
+apse;padding:0px 0px 10px;word-break:break-word"><div style=3D"font-family:=
+DysonFutura,Arial,Helvetica,sans-serif;font-size:14px;line-height:18px;colo=
+r:rgb(153,153,153)">=E2=82=AC 79.80</div></td></tr><tr><td align=3D"right" =
+style=3D"border-collapse:collapse;padding:10px 0px;word-break:break-word"><=
+div style=3D"font-family:DysonFutura,Arial,Helvetica,sans-serif;font-size:1=
+8px;line-height:24px;color:rgb(51,51,51)">=E2=82=AC 478.80</div></td></tr><=
+tr><td align=3D"right" style=3D"border-collapse:collapse;padding:0px 0px 10=
+px;word-break:break-word"><div style=3D"font-family:DysonFutura,Arial,Helve=
+tica,sans-serif;font-size:14px;line-height:18px;color:rgb(0,102,204)">=E2=
+=82=AC 0.00</div></td></tr></tbody></table>=C2=A0</td></tr></tbody></table>=
+</div></div></td></tr></tbody></table></div></td></tr></tbody></table></div=
+></td></tr></tbody></table><table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"border-collapse:collapse;background-image=
+:initial;background-position:initial;background-size:initial;background-rep=
+eat:initial;background-origin:initial;background-clip:initial;width:1330.67=
+px"><tbody><tr><td style=3D"border-collapse:collapse"><div style=3D"margin:=
+0px auto;max-width:640px"><table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"border-collapse:collapse;width:640px"><tb=
+ody><tr><td style=3D"border-collapse:collapse;direction:ltr;font-size:0px;p=
+adding:0px;text-align:center"><div style=3D"margin:0px auto;max-width:640px=
+"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+style=3D"border-collapse:collapse;width:640px"><tbody><tr><td style=3D"bord=
+er-collapse:collapse;direction:ltr;padding:0px 5px"><div style=3D"max-width=
+:100%;width:630px;text-align:left;direction:ltr;display:inline-block;vertic=
+al-align:top"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"border-collapse:collapse"><tbody><tr><td style=3D"border=
+-collapse:collapse;vertical-align:top;padding:0px 15px 20px"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-c=
+ollapse:collapse"><tbody><tr><td align=3D"left" style=3D"border-collapse:co=
+llapse;padding:0px 0px 10px;word-break:break-word"><div style=3D"font-famil=
+y:DysonFutura,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;co=
+lor:rgb(51,51,51)">Once an order has been placed, it cannot be amended.=C2=
+=A0Dyson=C2=A0gladly accepts returns in accordance to the=C2=A0<a href=3D"h=
+ttps://www.dyson.com/inside-dyson/terms/returns-policy.html" target=3D"_bla=
+nk" style=3D"color:rgb(102,102,102)">Dyson=C2=A0Store Returns Policy</a>. P=
+lease visit our=C2=A0<a href=3D"https://www.dyson.com/inside-dyson/terms/re=
+turns-policy.html" target=3D"_blank" style=3D"color:rgb(102,102,102)">retur=
+ns page</a>=C2=A0for more information or to begin the return process.</div>=
+</td></tr><tr><td align=3D"left" style=3D"border-collapse:collapse;padding:=
+0px 0px 10px;word-break:break-word"><div style=3D"font-family:DysonFutura,A=
+rial,Helvetica,sans-serif;font-size:11px;line-height:15px;color:rgb(51,51,5=
+1)">Refurbished machines as well as tools, parts and accessories will ship =
+separately and will be delivered within 5-7 business days.</div></td></tr><=
+tr><td align=3D"left" style=3D"border-collapse:collapse;padding:0px 0px 10p=
+x;word-break:break-word"><div style=3D"font-family:DysonFutura,Arial,Helvet=
+ica,sans-serif;font-size:11px;line-height:15px;color:rgb(51,51,51)">Get the=
+ most out of your machine by signing up for maintenance reminders and speci=
+al offers when you update your preferences on=C2=A0<a href=3D"https://www.d=
+yson.com/your-dyson.html" target=3D"_blank" style=3D"color:rgb(102,102,102)=
+">My=C2=A0Dyson</a>.</div></td></tr><tr><td align=3D"left" style=3D"border-=
+collapse:collapse;padding:0px 0px 10px;word-break:break-word"><div style=3D=
+"font-family:DysonFutura,Arial,Helvetica,sans-serif;font-size:11px;line-hei=
+ght:15px;color:rgb(51,51,51)">Discover maintenance guides, how-to videos an=
+d more by visiting the=C2=A0<a href=3D"https://www.dyson.com/support/journe=
+y/overview.html" target=3D"_blank" style=3D"color:rgb(102,102,102)">Dyson=
+=C2=A0Support Page</a>.</div></td></tr></tbody></table></td></tr></tbody></=
+table></div></td></tr></tbody></table></div></td></tr></tbody></table></div=
+></td></tr></tbody></table><table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"border-collapse:collapse;background:rgb(2=
+5,29,32);width:1330.67px"><tbody><tr><td style=3D"border-collapse:collapse"=
+><div style=3D"margin:0px auto;max-width:640px"><table align=3D"center" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse:coll=
+apse;width:640px"><tbody><tr><td style=3D"border-collapse:collapse;directio=
+n:ltr;font-size:0px;padding:0px;text-align:center"><div style=3D"margin:0px=
+ auto;max-width:640px"><table align=3D"center" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" style=3D"border-collapse:collapse;width:640px"><tbody>=
+<tr><td style=3D"border-collapse:collapse;direction:ltr;padding:30px 5px 0p=
+x"><div style=3D"max-width:70px;width:70px;text-align:left;direction:ltr;di=
+splay:inline-block;vertical-align:top"><table border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" width=3D"100%" style=3D"border-collapse:collapse"><tbod=
+y><tr><td style=3D"border-collapse:collapse;vertical-align:top;padding:0px =
+0px 20px 15px"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" widt=
+h=3D"100%" style=3D"border-collapse:collapse"><tbody><tr><td align=3D"left"=
+ style=3D"border-collapse:collapse;padding:0px;word-break:break-word"><tabl=
+e border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse=
+:collapse;border-spacing:0px"><tbody><tr><td style=3D"border-collapse:colla=
+pse;width:48px"><img height=3D"auto" src=3D"https://dyson-h.assetsadobe2.co=
+m/is/image/content/dam/dyson/oe-team-email-assets/transactional-email-asset=
+s/support.png?scl=3D1&amp;fmt=3Dpng-alpha" width=3D"48" class=3D"gmail-CToW=
+Ud" style=3D"border: 0px; height: auto; line-height: 13px; outline: none; d=
+isplay: block; width: 48px; font-size: 13px;"></td></tr></tbody></table></t=
+d></tr></tbody></table></td></tr></tbody></table></div><div style=3D"max-wi=
+dth:460px;width:460px;text-align:left;direction:ltr;display:inline-block;ve=
+rtical-align:top"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%" style=3D"border-collapse:collapse"><tbody><tr><td style=3D"bo=
+rder-collapse:collapse;vertical-align:top;padding:0px 15px 20px"><table bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"borde=
+r-collapse:collapse"><tbody><tr><td align=3D"left" style=3D"border-collapse=
+:collapse;padding:0px 0px 10px;word-break:break-word"><div style=3D"font-fa=
+mily:DysonFutura,Arial,Helvetica,sans-serif;font-size:18px;line-height:24px=
+;color:rgb(255,255,255)">What happens next</div></td></tr><tr><td align=3D"=
+left" style=3D"border-collapse:collapse;padding:0px 0px 10px;word-break:bre=
+ak-word"><div style=3D"font-family:DysonFutura,Arial,Helvetica,sans-serif;f=
+ont-size:14px;line-height:18px;color:rgb(255,255,255)">We will send you ano=
+ther email when your order has been shipped.</div></td></tr></tbody></table=
+></td></tr></tbody></table></div></td></tr></tbody></table></div></td></tr>=
+</tbody></table></div></td></tr></tbody></table><table align=3D"center" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse:coll=
+apse;background:rgb(243,243,243);width:1330.67px"><tbody><tr><td style=3D"b=
+order-collapse:collapse"><div style=3D"margin:0px auto;max-width:640px"><ta=
+ble align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"border-collapse:collapse;width:640px"><tbody><tr><td style=3D"border-co=
+llapse:collapse;direction:ltr;font-size:0px;padding:0px;text-align:center">=
+<div style=3D"margin:0px auto;max-width:640px"><table align=3D"center" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse:colla=
+pse;width:640px"><tbody><tr><td style=3D"border-collapse:collapse;direction=
+:ltr;padding:30px 5px 0px"><div style=3D"max-width:460px;width:460px;text-a=
+lign:left;direction:ltr;display:inline-block;vertical-align:top"><table bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"borde=
+r-collapse:collapse"><tbody><tr><td style=3D"border-collapse:collapse;verti=
+cal-align:top;padding:0px 15px 20px"><table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%" style=3D"border-collapse:collapse"><tbody>=
+<tr><td align=3D"left" style=3D"border-collapse:collapse;padding:0px 0px 10=
+px;word-break:break-word"><div style=3D"font-family:DysonFutura,Arial,Helve=
+tica,sans-serif;font-size:21px;line-height:27px;color:rgb(51,51,51)">Contac=
+ting us is easy</div></td></tr><tr><td align=3D"left" style=3D"border-colla=
+pse:collapse;padding:0px 0px 10px;word-break:break-word"><div style=3D"font=
+-family:DysonFutura,Arial,Helvetica,sans-serif;font-size:14px;line-height:1=
+8px;color:rgb(51,51,51)">If you have any questions about your order, a=C2=
+=A0Dyson=C2=A0Expert is on hand to help.</div></td></tr></tbody></table></t=
+d></tr></tbody></table></div></td></tr></tbody></table></div><div style=3D"=
+margin:0px auto;max-width:640px"><table align=3D"center" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" style=3D"border-collapse:collapse;width:640p=
+x"><tbody><tr><td style=3D"border-collapse:collapse;direction:ltr;padding:0=
+px 5px 10px"><div style=3D"max-width:33.3333%;width:210px;text-align:left;d=
+irection:ltr;display:inline-block;vertical-align:top"><table border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-collapse:=
+collapse"><tbody><tr><td style=3D"border-collapse:collapse;vertical-align:t=
+op;padding:0px 15px 20px"><table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%" style=3D"border-collapse:collapse"><tbody><tr><td ali=
+gn=3D"left" style=3D"border-collapse:collapse;padding:0px 0px 15px;word-bre=
+ak:break-word"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"border-collapse:collapse;width:210px;border-spacing:0px"><tbody><tr><t=
+d align=3D"center" bgcolor=3D"#333333" valign=3D"middle" style=3D"border-co=
+llapse:collapse;border:none;border-radius:0px;background:rgb(51,51,51)"><a =
+href=3D"https://www.dyson.com/support/contact-us?utm_campaign=3Dtransact__c=
+__notify__transactional-order-confirmation-general-US&amp;utm_source=3Dsap&=
+amp;utm_medium=3Demail" target=3D"_blank" style=3D"color:rgb(255,255,255);d=
+isplay:inline-block;width:180px;background-image:initial;background-positio=
+n:initial;background-size:initial;background-repeat:initial;background-orig=
+in:initial;background-clip:initial;font-family:DysonFutura,Arial,Helvetica,=
+sans-serif;font-size:14px;line-height:18px;margin:0px;text-decoration-line:=
+none;padding:13px 10px;border-radius:0px">Contact us</a></td></tr></tbody><=
+/table></td></tr></tbody></table></td></tr></tbody></table></div><div style=
+=3D"max-width:33.3333%;width:210px;text-align:left;direction:ltr;display:in=
+line-block;vertical-align:top"></div><div style=3D"max-width:33.3333%;width=
+:210px;text-align:left;direction:ltr;display:inline-block;vertical-align:to=
+p"></div></td></tr></tbody></table></div></td></tr></tbody></table></div></=
+td></tr></tbody></table><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" style=3D"border-collapse:collapse;background-image:in=
+itial;background-position:initial;background-size:initial;background-repeat=
+:initial;background-origin:initial;background-clip:initial;width:1330.67px"=
+><tbody><tr><td style=3D"border-collapse:collapse"><div style=3D"margin:0px=
+ auto;max-width:640px"><table align=3D"center" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" style=3D"border-collapse:collapse;width:640px"><tbody>=
+<tr><td style=3D"border-collapse:collapse;direction:ltr;font-size:0px;paddi=
+ng:0px;text-align:center"><div style=3D"margin:0px auto;max-width:640px"><t=
+able align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"border-collapse:collapse;width:640px"><tbody><tr><td style=3D"border-c=
+ollapse:collapse;direction:ltr;padding:25px 5px 0px"><div style=3D"max-widt=
+h:100%;width:630px;line-height:0;text-align:left;display:inline-block;direc=
+tion:ltr"><div style=3D"max-width:28%;width:176.389px;direction:ltr;display=
+:inline-block;vertical-align:top"><table border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" width=3D"100%" style=3D"border-collapse:collapse"><tbody><tr=
+><td style=3D"border-collapse:collapse;vertical-align:top;padding:0px 15px"=
+><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" sty=
+le=3D"border-collapse:collapse"><tbody><tr><td align=3D"left" style=3D"bord=
+er-collapse:collapse;padding:0px 0px 10px;word-break:break-word"><table bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse:coll=
+apse;border-spacing:0px"><tbody><tr><td style=3D"border-collapse:collapse;w=
+idth:55px"><a href=3D"https://www.dyson.com/?utm_campaign=3Dtransact__c__no=
+tify__transactional-order-confirmation-general-US&amp;utm_source=3Dsap&amp;=
+utm_medium=3Demail" target=3D"_blank"><img alt=3D"" height=3D"21" src=3D"ht=
+tps://dyson-h.assetsadobe2.com/is/image//content/dam/dyson/oe-team-email-as=
+sets/mjml-master-template-assets/dyson-logo-footer-dark-x2.png?scl=3D1&amp;=
+fmt=3Dpng-alpha" width=3D"55" class=3D"gmail-CToWUd" style=3D"border: 0px; =
+height: 21px; line-height: 13px; outline: none; text-decoration-line: none;=
+ display: block; width: 55px; font-size: 13px;"></a></td></tr></tbody></tab=
+le></td></tr></tbody></table></td></tr></tbody></table></div></div></td></t=
+r></tbody></table></div><div style=3D"margin:0px auto;max-width:640px"><tab=
+le align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"border-collapse:collapse;width:640px"><tbody><tr><td style=3D"border-co=
+llapse:collapse;direction:ltr;padding:3px 5px 0px"><div style=3D"max-width:=
+100%;width:630px;text-align:left;direction:ltr;display:inline-block;vertica=
+l-align:top"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"border-collapse:collapse"><tbody><tr><td style=3D"border=
+-collapse:collapse;vertical-align:top;padding:0px 15px 20px"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-c=
+ollapse:collapse"><tbody><tr><td align=3D"center" style=3D"border-collapse:=
+collapse;padding:0px;word-break:break-word"><p style=3D"margin:0px auto;bor=
+der-top:1px solid rgb(217,217,217);font-size:1px;width:600px"></p></td></tr=
+></tbody></table></td></tr></tbody></table></div></td></tr></tbody></table>=
+</div><div style=3D"margin:0px auto;max-width:640px"><table align=3D"center=
+" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse=
+:collapse;width:640px"><tbody><tr><td style=3D"border-collapse:collapse;dir=
+ection:ltr;padding:0px 5px 40px"><div style=3D"max-width:100%;width:630px;t=
+ext-align:left;direction:ltr;display:inline-block;vertical-align:top"><tabl=
+e border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"=
+border-collapse:collapse"><tbody><tr><td style=3D"border-collapse:collapse;=
+vertical-align:top;padding:0px 15px 10px"><table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-collapse:collapse">=
+<tbody><tr><td align=3D"left" style=3D"border-collapse:collapse;padding:0px=
+ 0px 10px;word-break:break-word"><div style=3D"font-family:DysonFutura,Aria=
+l,Helvetica,sans-serif;font-size:11px;line-height:15px;color:rgb(153,153,15=
+3)">You&#39;ve received this email because you recently purchased a=C2=A0Dy=
+son=C2=A0machine. Unless requested, you have not been added to any marketin=
+g list. We explain how we use your personal information in our=C2=A0<a href=
+=3D"https://privacy.dyson.com/homepage.aspx?utm_campaign=3Dtransact__c__not=
+ify__transactional-order-confirmation-general-US&amp;utm_source=3Dsap&amp;u=
+tm_medium=3Demail" target=3D"_blank" style=3D"color:rgb(153,153,153)">Priva=
+cy policy</a>. If you think you have received this email in error, please c=
+ontact us.</div></td></tr></tbody></table></td></tr><tr><td style=3D"border=
+-collapse:collapse;vertical-align:top;padding:0px 15px 20px"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-c=
+ollapse:collapse"><tbody><tr><td align=3D"left" style=3D"border-collapse:co=
+llapse;padding:0px 0px 10px;word-break:break-word"><div style=3D"font-famil=
+y:DysonFutura,Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;co=
+lor:rgb(153,153,153)">Dyson=C2=A0Inc. 1330 West Fulton Street, 5th Floor, C=
+hicago, Illinois 60607.</div></td></tr></tbody></table></td></tr></tbody></=
+table></div></td></tr></tbody></table></div></td></tr></tbody></table></div=
+></td></tr></tbody></table></div>
+
+--000000000000ab09dc0608ccc48d--

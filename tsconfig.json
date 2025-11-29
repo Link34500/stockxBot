@@ -8,6 +8,7 @@
     "rootDir": "src",
     "outDir": "dist",
     "esModuleInterop": true,
+    "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,

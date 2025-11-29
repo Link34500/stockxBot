@@ -1,0 +1,496 @@
+Delivered-To: rize.invoice1@gmail.com
+Received: by 2002:ab4:a625:0:b0:22b:f0d8:52b with SMTP id ez5csp3332300ecb;
+        Tue, 17 Oct 2023 09:20:32 -0700 (PDT)
+X-Received: by 2002:a05:6871:8483:b0:1e9:e02e:f4c2 with SMTP id sv3-20020a056871848300b001e9e02ef4c2mr3150471oab.8.1697559632568;
+        Tue, 17 Oct 2023 09:20:32 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697559632; cv=none;
+        d=google.com; s=arc-20160816;
+        b=O6yaKibvT/FC9T74v2cAXf7ZKvQHo7fImheTsE9tjBLs7bwgnVdfSaTNw9WaIHmZBo
+         rWEb1PnEkdC9dtIrPeR6uvwv9cyPesyzrGL4/Xjed1HSFxKafRtswnEsP+F6hXA+AkZB
+         me7tjURB8MlS5HrN2QfNL0BRyjHZRodOsaEuhXbq+fNP1S8ChvvDS348ArkgfsiAz/WW
+         HUbOF3QavVa8tl8QEJrTXYVjAveDJ/bJXxNFj9brOBKQDdCkGIiIobDOEdC6HnISa3WV
+         RhDs8iMZjKrWxvfADV3fSJhfkMUfcreVPMtwYChKDqjy+QSVK1QkJWsFbc8vDPrRzpQi
+         e8Dg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=BuXkpCYRnnR8fKfXIzOY2NYSx439+QA5Dgw130awx28=;
+        fh=Q2G6m76/pud4lfvwBmh8hSHavoMTgSXASDcQps26XYs=;
+        b=mOC0g2lNx62bVOHyTRdltOZ1t0JL0DOQ05zUo8wIxqa1J+QS3tMdef5vAilFBkl/hI
+         BJZaB7+0AM2Ja61HkbkL0F6p3kdEYDK78sXAoA8puAsJoHXrtQYbLIXLTGYdgtYIKFt1
+         HRLYAPwbaR5o3aA2xbBw8jjxLA36Dzj5KsAdXSEjbYMeqz4lKdoeNaG2uZxGl76BbNRe
+         f7DQE5URsvNmsuCd8VZhZANiZXvhNFdqW27B621ZOCwRM7vfCguHtCgngYICofjCyn6k
+         kVs1cCRjL+/d8lHy/+Fm1S3Q3VJqzE02GMvIAYaTha3/SZoAO4OTdKbWXy9l8IMl2Mv2
+         4Y/w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=JWV6IJcV;
+       spf=pass (google.com: domain of kqzlyv@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=kqzlyv@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <kqzlyv@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id e64-20020a636943000000b005ae939c731asor45206pgc.5.2023.10.17.09.20.32
+        for <rize.invoice1@gmail.com>
+        (Google Transport Security);
+        Tue, 17 Oct 2023 09:20:32 -0700 (PDT)
+Received-SPF: pass (google.com: domain of kqzlyv@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=JWV6IJcV;
+       spf=pass (google.com: domain of kqzlyv@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=kqzlyv@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1697559632; x=1698164432; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=BuXkpCYRnnR8fKfXIzOY2NYSx439+QA5Dgw130awx28=;
+        b=JWV6IJcVLcyxcvXfH/YQsGkMgUF+XZ1QHjOlpHvIRSvmdqu6VICGsq2EJ3FvppJIb8
+         /Kwy+/5N1u0mDUzZ5Shrfq8am1V2uDGfuK+FlDFzmymyca4xO58EoCa26wK5i1UrFOYO
+         DSJDSrkbdnMWw5l+3UAjX9x8AqpEKqF8CjPxlkXGONU8WaHDIQOqQfyKoNDla8+gmE9+
+         Z2Z8K0n8CmixKxJkZE5OJD58mJvPGJW381EMSfpm3Ms9Ry3+K8VSEQgV66QYJqLXN3HY
+         DEWHxkWEooPRTp6ybjC9vVrusgS2alR6YYvsYr3fBYit/Qo4cCdvj1IDkFxQoLvRlRTp
+         7zyA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1697559632; x=1698164432;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=BuXkpCYRnnR8fKfXIzOY2NYSx439+QA5Dgw130awx28=;
+        b=Cdd+l1lXJ8BTtsggm8TiwEFwMClui0uUBgxqPZZTSQIjB9h6pgbfDgfP488MMeZ0oa
+         dKeD9pYxyZSmMimz10QjmE9VyjLzNhlt6yQOnkJx7txXVG5IYtQPi+/ufOR1dO6/a9tc
+         yr0MkNh/+iCgEVmQJghAjuQ74xKNL0Gw0Xr93/ZWQUxAohpDRlEEJ7/GYaqh2PT7TcL0
+         ejinBx0U6r8OjX6h9I/WpNACzFdA8AE66ogPTHi0O73hUM4iyslM7kJ8CGByBlAHOo+p
+         c/K6lLAVQgNmkQt2XqC41UnRj+hicpfQwf5v2W50pdO7hVjPuBTWAbcCI0KDSzve5rc3
+         X04Q==
+X-Gm-Message-State: AOJu0YwzwXm39r/ZBGt+KQxLBUf20gn7ipprAKX/+1djbXByvmGnLRfz
+	byAS/W3WEI4H0MokTX5xVrOAQBjQAD3GDlPnVT0HMOQE
+X-Google-Smtp-Source: AGHT+IHzxT8KJyxhZMV1c5acobdF0nqfJAhLi+KjZNFdlmOWsbJCZ7XfPDA2+qbVlTQnzrYzmZ4PxjA1VeVHDbEMTuw=
+X-Received: by 2002:a05:6a20:4322:b0:16b:8498:d9bc with SMTP id
+ h34-20020a056a20432200b0016b8498d9bcmr2743437pzk.62.1697559631668; Tue, 17
+ Oct 2023 09:20:31 -0700 (PDT)
+MIME-Version: 1.0
+From: KammsFN <kqzlyv@gmail.com>
+Date: Tue, 17 Oct 2023 18:20:20 +0200
+Message-ID: <CAKAR=msmn7HkVH-cuDvvVU+KYpLkYxUBk8Tn9mhBimichcNqFg@mail.gmail.com>
+Subject: Size
+To: rize.invoice1@gmail.com
+Content-Type: multipart/alternative; boundary="000000000000d4a9a70607ebe6b7"
+
+--000000000000d4a9a70607ebe6b7
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+*Livraison sans contact sur toutes les commandes*
+<https://reporting.sizeofficial.de/cgi-bin/rr/nobook:638451,nosent:1328941,=
+nosrep:281097,nored:wzex0H5Ez3RDFbrGdlj0V2Z2tmVffUgid9JQ03Gs5As=3D/https://=
+www.sizeofficial.fr/?utm_source=3DRedEye&utm_medium=3DEmail&utm_campaign=3D=
+Transactional%20API&utm_content=3Dtransorderconffr&utm_term=3Dtransordercon=
+ffr&utm_medium=3DEmail&utm_campaign=3D&utm_content=3D&utm_term=3D>
+<https://reporting.sizeofficial.de/cgi-bin/rr/nobook:638452,nosent:1328941,=
+nosrep:281097,nored:wzex0H5Ez3RDFbrGdlj0VxpjC72o5qI27W8IMbDCnYSR0Nws52tiufl=
+y483nKC2k/https://www.sizeofficial.fr/myaccount/dashboard/?utm_source=3DRed=
+Eye&utm_medium=3DEmail&utm_campaign=3DTransactional%20API&utm_content=3Dtra=
+nsorderconffr&utm_term=3Dtransorderconffr&utm_medium=3DEmail&utm_campaign=
+=3D&utm_content=3D&utm_term=3D>
+
+kalvyn,
+voici la confirmation de votre commande.
+
+*Bonne nouvelle ! Nous avons bien re=C3=A7u votre commande #951021748.*
+
+
+Merci d'avoir pass=C3=A9 une commande avec nous. Nous vous contacterons sou=
+s peu
+avec des mises =C3=A0 jour.
+Veuillez noter que si vous achetez plus d'un article, votre commande peut
+=C3=AAtre divis=C3=A9e en plusieurs livraisons. Cela permet de vous faire p=
+arvenir
+vos articles plus t=C3=B4t et de garantir le respect de la distanciation so=
+ciale
+lorsque nous emballons votre commande. Vous pouvez suivre votre achat et sa
+progression 24h/24 et 7j/7 ici
+<https://www.sizeofficial.fr/track-my-order/?utm_source=3DRedEye&utm_medium=
+=3DEmail&utm_campaign=3DTransactional%20API&utm_content=3Dtransorderconffr&=
+utm_term=3Dtransorderconffr>,
+veuillez utiliser le num=C3=A9ro de commande parent (ci-dessus).
+
+Voici un rappel de ce que vous avez command=C3=A9 ci-dessous et les d=C3=A9=
+tails que
+vous nous avez donn=C3=A9s. Veuillez prendre une minute pour v=C3=A9rifier =
+que tout
+est en ordre. Vous pouvez =C3=A9galement trouver ci-dessous notre FAQ qui
+pourrait vous =C3=AAtre utile.
+
+suivre ma commande
+<https://reporting.sizeofficial.de/cgi-bin/rr/nobook:638454,nosent:1328941,=
+nosrep:281097,nored:wzex0H5Ez3RDFbrGdlj0V7-IiOHDrQcMGTHQZEVRYC_0YA0Ec9ZvUfa=
+-1vS_loRz/https://www.sizeofficial.fr/track-my-order/?utm_source=3DRedEye&u=
+tm_medium=3DEmail&utm_campaign=3DTransactional%20API&utm_content=3Dtransord=
+erconffr&utm_term=3Dtransorderconffr&utm_medium=3DEmail&utm_campaign=3D&utm=
+_content=3D&utm_term=3D>
+*Vous avez une question ? Consultez notre FAQ=E2=80=A6*
+FAQs
+<https://reporting.sizeofficial.de/cgi-bin/rr/nobook:638455,nosent:1328941,=
+nosrep:281097,nored:wzex0H5Ez3RDFbrGdlj0V-zs5r9mffCJjIdHeVTZBvo=3D/https://=
+www.sizeofficial.fr/pages/faqs/?utm_source=3DRedEye&utm_medium=3DEmail&utm_=
+campaign=3DTransactional%20API&utm_content=3Dtransorderconffr&utm_term=3Dtr=
+ansorderconffr&utm_medium=3DEmail&utm_campaign=3D&utm_content=3D&utm_term=
+=3D>
+*Adresse de Livraison*
+Karl un
+Rue des tulipes
+apt 3
+Toulouse
+31 *Adresse de Facturation*
+Kalvyn
+Rue des tulipe
+apt 3
+Toulouse
+31000
+*Quand ? *
+D
+Command=C3=A9: 16 October 2023 22:41 BST
+Attendu le ou avant: 25 October 2023 *M=C3=A9thode de Paiement*
+PAYPAL
+*Nom de l'article**Quantit=C3=A9**Prix*
+<https://reporting.sizeofficial.de/cgi-bin/rr/nobook:638456,nosent:1328941,=
+nosrep:281097,nored:ULKye1AUzGceVjHgbH_Brh807J-_xF81oooTjE2k4c0=3D/https://=
+www.sizeofficial.fr/product/blanc-jordan-air-3-retro/645577_sizefr_sizefr/?=
+utm_source=3DRedEye&utm_medium=3DEmail&utm_campaign=3DTransactional%20API&u=
+tm_content=3Dtransorderconffr&utm_term=3Dtransorderconffr>
+Jordan Jordan Air 3 Retro
+Taille: 42.5
+1 210.00=E2=82=AC
+<https://reporting.sizeofficial.de/cgi-bin/rr/nobook:638457,nosent:1328941,=
+nosrep:281097,nored:ULKye1AUzGceVjHgbH_Brh807J-_xF81oooTjE2k4c0=3D/https://=
+www.sizeofficial.fr/product/blanc-jordan-air-3-retro/645577_sizefr_sizefr/?=
+utm_source=3DRedEye&utm_medium=3DEmail&utm_campaign=3DTransactional%20API&u=
+tm_content=3Dtransorderconffr&utm_term=3Dtransorderconffr>
+Jordan Jordan Air 3 Retro
+Taille: 44
+1 210.00=E2=82=AC
+Sous-total 420.00=E2=82=AC
+Livraison 0.00=E2=82=AC
+Total 420.00=E2=82=AC
+Cr=C3=A9er un compte
+<https://reporting.sizeofficial.de/cgi-bin/rr/nobook:638486,nosent:1328941,=
+nosrep:281097,nored:ULKye1AUzGceVjHgbH_Brh807J-_xF81oooTjE2k4c0=3D/https://=
+www.sizeofficial.fr/myaccount/register/?utm_source=3DRedEye&utm_medium=3DEm=
+ail&utm_campaign=3DTransactional%20API&utm_content=3Dtransorderconffr&utm_t=
+erm=3Dtransorderconffr&utm_medium=3DEmail&utm_campaign=3D&utm_content=3D&ut=
+m_term=3D>
+Retours
+Besoin de retourner quelque chose ? Vous trouverez nos instructions en
+consultant nos Termes et Conditions ici
+<https://reporting.sizeofficial.de/cgi-bin/rr/nobook:638487,nosent:1328941,=
+nosrep:281097,nored:ULKye1AUzGceVjHgbH_Brh807J-_xF81oooTjE2k4c0=3D/https://=
+www.sizeofficial.fr/customer-service/terms/?utm_source=3DRedEye&utm_medium=
+=3DEmail&utm_campaign=3DTransactional%20API&utm_content=3Dtransorderconffr&=
+utm_term=3Dtransorderconffr&utm_medium=3DEmail&utm_campaign=3D&utm_content=
+=3D&utm_term=3D>
+.
+Retourner mes articles
+<https://reporting.sizeofficial.de/cgi-bin/rr/nobook:638488,nosent:1328941,=
+nosrep:281097,nored:ULKye1AUzGceVjHgbH_Brh807J-_xF81oooTjE2k4c0=3D/https://=
+www.sizeofficial.fr/pages/faqs/returns-and-refunds/all/?utm_source=3DRedEye=
+&utm_medium=3DEmail&utm_campaign=3DTransactional%20API&utm_content=3Dtranso=
+rderconffr&utm_term=3Dtransorderconffr&utm_medium=3DEmail&utm_campaign=3D&u=
+tm_content=3D&utm_term=3D>
+Besoin d'aide ?
+Notre =C3=A9quipe d=C3=A9di=C3=A9e au service client est l=C3=A0 pour vous =
+aider avec toutes
+les questions ou demandes que vous avez au sujet de votre commande ou de
+votre exp=C3=A9rience lors de vos achats avec nous.
+[image: Facebook Messenger]
+<https://reporting.sizeofficial.de/cgi-bin/rr/nobook:638489,nosent:1328941,=
+nosrep:281097,nored:F_-hu7mBzkekBWk3BnAuVbIuwoSl2SvZNgLf1XdcgV_w0D36BUgvOU1=
+vjFhEybet/https://www.facebook.com/sizeOfficialfr/?utm_source=3DRedEye&utm_=
+medium=3DEmail&utm_campaign=3DTransactional%20API&utm_content=3Dtransorderc=
+onffr&utm_term=3Dtransorderconffr>
+Conditions G=C3=A9n=C3=A9ra
+<https://reporting.sizeofficial.de/cgi-bin/rr/nobook:638490,nosent:1328941,=
+nosrep:281097,nored:wzex0H5Ez3RDFbrGdlj0V0M44ajRdrqI2VUDG2bf8Fy0ZFYbhteLCnO=
+nuGwPUBUn/https://www.sizeofficial.fr/customer-service/terms/?utm_source=3D=
+RedEye&utm_medium=3DEmail&utm_campaign=3DTransactional%20API&utm_content=3D=
+transorderconffr&utm_term=3Dtransorderconffr&utm_medium=3DEmail&utm_campaig=
+n=3D&utm_content=3D&utm_term=3D>
+
+--000000000000d4a9a70607ebe6b7
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div><div dir=3D"auto"><table align=3D"center" bgcolor=3D"#FFFFFF" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"620" style=3D"margin:0p=
+x auto;width:358px;height:auto!important;color:rgb(0,0,0);font-family:Helve=
+tica,Arial,sans-serif;font-size:12px;font-style:normal;font-variant-caps:no=
+rmal;font-weight:400;letter-spacing:normal;text-align:start;text-transform:=
+none;white-space:normal;word-spacing:1px;text-decoration:none;line-height:1=
+6px;border-collapse:collapse"><tbody><tr><td><table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"90%" style=3D"font-fami=
+ly:Helvetica,Arial,sans-serif;font-size:12px;color:rgb(0,0,0);line-height:1=
+6px;border-collapse:collapse"><tbody><tr><td style=3D"line-height:13px;font=
+-size:13px;padding:13px 0px;text-align:center"><strong style=3D"font-size:0=
+.625rem">Livraison sans contact sur toutes les commandes</strong></td></tr>=
+</tbody></table></td></tr><tr><td bgcolor=3D"#2E2E2E" style=3D"padding:15px=
+ 0px"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"90%" style=3D"font-family:Helvetica,Arial,sans-serif;font-size=
+:12px;color:rgb(0,0,0);line-height:16px;border-collapse:collapse"><tbody><t=
+r><td><a href=3D"https://reporting.sizeofficial.de/cgi-bin/rr/nobook:638451=
+,nosent:1328941,nosrep:281097,nored:wzex0H5Ez3RDFbrGdlj0V2Z2tmVffUgid9JQ03G=
+s5As=3D/https://www.sizeofficial.fr/?utm_source=3DRedEye&amp;utm_medium=3DE=
+mail&amp;utm_campaign=3DTransactional%20API&amp;utm_content=3Dtransordercon=
+ffr&amp;utm_term=3Dtransorderconffr&amp;utm_medium=3DEmail&amp;utm_campaign=
+=3D&amp;utm_content=3D&amp;utm_term=3D" title=3D"size?" style=3D"color:rgb(=
+66,133,244);text-decoration:none" target=3D"_blank"><img alt=3D"" border=3D=
+"0" src=3D"https://i8.amplience.net/i/jpl/logo-ff600b-5b39ad773432c31ac1d73=
+4af02c38ebd" width=3D"120" style=3D"display:block"></a></td><td><table alig=
+n=3D"center" bgcolor=3D"#2e2e2e" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%" style=3D"font-family:Arial,Helvetica,sans-serif;font-=
+size:12px;color:rgb(0,0,0);line-height:16px;border-collapse:collapse"><tbod=
+y><tr><td><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" width=3D"100%" style=3D"font-family:Helvetica,Arial,sans-serif;font=
+-size:12px;color:rgb(0,0,0);line-height:16px;border-collapse:collapse"><tbo=
+dy><tr><td align=3D"right" width=3D"32"><a href=3D"https://reporting.sizeof=
+ficial.de/cgi-bin/rr/nobook:638452,nosent:1328941,nosrep:281097,nored:wzex0=
+H5Ez3RDFbrGdlj0VxpjC72o5qI27W8IMbDCnYSR0Nws52tiufly483nKC2k/https://www.siz=
+eofficial.fr/myaccount/dashboard/?utm_source=3DRedEye&amp;utm_medium=3DEmai=
+l&amp;utm_campaign=3DTransactional%20API&amp;utm_content=3Dtransorderconffr=
+&amp;utm_term=3Dtransorderconffr&amp;utm_medium=3DEmail&amp;utm_campaign=3D=
+&amp;utm_content=3D&amp;utm_term=3D" title=3D"" style=3D"color:rgb(66,133,2=
+44);text-decoration:none" target=3D"_blank"><img alt=3D"" border=3D"0" src=
+=3D"https://jdsports-client-resources.co.uk/jdsports-client-resources/img/2=
+021/0122/email/account-icon.png" width=3D"32" style=3D"display:block"></a><=
+/td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></tabl=
+e></td></tr><tr><td style=3D"padding:32px"><table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"576" style=3D"margin:0px auto;width:310px=
+;float:none!important;height:auto!important;font-family:Arial,Helvetica,san=
+s-serif;font-size:12px;color:rgb(0,0,0);line-height:16px;border-collapse:co=
+llapse"><tbody><tr><td align=3D"left">=C2=A0<table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"512" style=3D"margin:0px auto;width:246px=
+;float:none!important;height:auto!important"><tbody><tr></tr><tr><td style=
+=3D"font-family:Helvetica,Arial,sans-serif;font-size:2rem;line-height:40px;=
+color:rgb(27,28,30)">kalvyn,<br>voici la confirmation de votre commande.<br=
+>=C2=A0</td></tr><tr><td style=3D"font-family:Helvetica,Arial,sans-serif;fo=
+nt-size:24px;line-height:32px;color:rgb(27,28,30)"><strong style=3D"font-si=
+ze:1.5rem">Bonne nouvelle ! Nous avons bien re=C3=A7u votre commande #<span=
+ style=3D"color:rgb(255,96,11);font-size:1.5rem">951021748</span>.</strong>=
+<br>=C2=A0</td></tr></tbody></table></td><td align=3D"right" valign=3D"top"=
+ width=3D"64"><img alt=3D"" src=3D"https://jdsports-client-resources.co.uk/=
+jdsports-client-resources/img/2021/0429/email/delivery-icon.png" width=3D"6=
+4" style=3D"margin:0px auto;width:64px;float:none!important;height:auto!imp=
+ortant;display:block"></td></tr><tr><td colspan=3D"3"><table border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"576" style=3D"margin:0px auto;w=
+idth:310px;float:none!important;height:auto!important"><tbody><tr></tr></tb=
+ody></table></td></tr><tr><td colspan=3D"3"><table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"576" style=3D"margin:0px auto;width:310px=
+;float:none!important;height:auto!important"><tbody><tr><td style=3D"font-s=
+ize:0.8125rem;line-height:21px;font-family:Helvetica,Arial,sans-serif;color=
+:rgb(27,28,30)"><br>Merci d&#39;avoir pass=C3=A9 une commande avec nous. No=
+us vous contacterons sous peu avec des mises =C3=A0 jour.<br>Veuillez noter=
+ que si vous achetez plus d&#39;un article, votre commande peut =C3=AAtre d=
+ivis=C3=A9e en plusieurs livraisons. Cela permet de vous faire parvenir vos=
+ articles plus t=C3=B4t et de garantir le respect de la distanciation socia=
+le lorsque nous emballons votre commande. Vous pouvez suivre votre achat et=
+ sa progression 24h/24 et 7j/7<span>=C2=A0</span><a href=3D"https://www.siz=
+eofficial.fr/track-my-order/?utm_source=3DRedEye&amp;utm_medium=3DEmail&amp=
+;utm_campaign=3DTransactional%20API&amp;utm_content=3Dtransorderconffr&amp;=
+utm_term=3Dtransorderconffr" style=3D"color:rgb(27,28,30);text-decoration:u=
+nderline;font-size:0.8125rem" target=3D"_blank">ici</a>, veuillez utiliser =
+le num=C3=A9ro de commande parent (ci-dessus).<br><br>Voici un rappel de ce=
+ que vous avez command=C3=A9 ci-dessous et les d=C3=A9tails que vous nous a=
+vez donn=C3=A9s. Veuillez prendre une minute pour v=C3=A9rifier que tout es=
+t en ordre. Vous pouvez =C3=A9galement trouver ci-dessous notre FAQ qui pou=
+rrait vous =C3=AAtre utile.<br>=C2=A0</td></tr><tr><td><table border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" width=3D"576" style=3D"margin:0px auto;=
+width:310px;float:none!important;height:auto!important"><tbody><tr><td alig=
+n=3D"center" bgcolor=3D"#FF600B"><a href=3D"https://reporting.sizeofficial.=
+de/cgi-bin/rr/nobook:638454,nosent:1328941,nosrep:281097,nored:wzex0H5Ez3RD=
+FbrGdlj0V7-IiOHDrQcMGTHQZEVRYC_0YA0Ec9ZvUfa-1vS_loRz/https://www.sizeoffici=
+al.fr/track-my-order/?utm_source=3DRedEye&amp;utm_medium=3DEmail&amp;utm_ca=
+mpaign=3DTransactional%20API&amp;utm_content=3Dtransorderconffr&amp;utm_ter=
+m=3Dtransorderconffr&amp;utm_medium=3DEmail&amp;utm_campaign=3D&amp;utm_con=
+tent=3D&amp;utm_term=3D" title=3D"" style=3D"color:rgb(255,255,255);font-si=
+ze:1rem;font-family:Helvetica,Arial,sans-serif;text-decoration:none;padding=
+:12px 0px;border:2px solid rgb(255,96,11);display:block;width:303.796875px"=
+ target=3D"_blank">suivre ma commande</a></td></tr></tbody></table></td></t=
+r><tr><td height=3D"32"></td></tr><tr><td style=3D"font-family:Helvetica,Ar=
+ial,sans-serif;font-size:18px;line-height:21px"><strong style=3D"font-size:=
+1.125rem">Vous avez une question ? Consultez notre FAQ=E2=80=A6</strong></t=
+d></tr><tr><td height=3D"32"></td></tr><tr><td><table border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" width=3D"576" style=3D"margin:0px auto;width:31=
+0px;float:none!important;height:auto!important"><tbody><tr><td align=3D"cen=
+ter" bgcolor=3D"#1B1C1E"><a href=3D"https://reporting.sizeofficial.de/cgi-b=
+in/rr/nobook:638455,nosent:1328941,nosrep:281097,nored:wzex0H5Ez3RDFbrGdlj0=
+V-zs5r9mffCJjIdHeVTZBvo=3D/https://www.sizeofficial.fr/pages/faqs/?utm_sour=
+ce=3DRedEye&amp;utm_medium=3DEmail&amp;utm_campaign=3DTransactional%20API&a=
+mp;utm_content=3Dtransorderconffr&amp;utm_term=3Dtransorderconffr&amp;utm_m=
+edium=3DEmail&amp;utm_campaign=3D&amp;utm_content=3D&amp;utm_term=3D" title=
+=3D"" style=3D"color:rgb(255,255,255);font-size:1rem;font-family:Helvetica,=
+Arial,sans-serif;text-decoration:none;padding:12px 0px;border:2px solid rgb=
+(27,28,30);display:block;width:303.796875px" target=3D"_blank">FAQs</a></td=
+></tr></tbody></table></td></tr><tr><td height=3D"32"></td></tr><tr><td><ta=
+ble border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"576" style=3D=
+"margin:0px auto;width:310px;float:none!important;height:auto!important"><t=
+body><tr><td height=3D"1" width=3D"272" style=3D"margin:0px auto;width:155p=
+x;float:none!important"></td><td height=3D"1" width=3D"32"></td><td height=
+=3D"1" width=3D"272" style=3D"margin:0px auto;width:155px;float:none!import=
+ant"></td></tr><tr><td valign=3D"top" style=3D"font-size:0.8125rem;line-hei=
+ght:26px;font-family:Helvetica,Arial,sans-serif;color:rgb(27,28,30)"><stron=
+g style=3D"font-size:1rem;line-height:21px!important">Adresse de Livraison<=
+/strong><br>Karl un<br>Rue des tulipes<br>apt 3<br>Toulouse<br>31</td><td><=
+/td><td valign=3D"top" style=3D"font-size:0.8125rem;line-height:26px;font-f=
+amily:Helvetica,Arial,sans-serif;color:rgb(27,28,30)"><strong style=3D"font=
+-size:1rem;line-height:21px!important">Adresse de Facturation</strong><br>K=
+alvyn<br>Rue des tulipe<br>apt 3<br>Toulouse<br>31000</td></tr><tr><td cols=
+pan=3D"3" height=3D"32"></td></tr><tr><td bgcolor=3D"#1B1C1E" colspan=3D"3"=
+ height=3D"8"></td></tr><tr><td colspan=3D"3" height=3D"32"></td></tr><tr><=
+td valign=3D"top" style=3D"font-size:0.8125rem;line-height:26px;font-family=
+:Helvetica,Arial,sans-serif;color:rgb(27,28,30)"><strong style=3D"font-size=
+:1rem;line-height:21px!important">Quand ?<span>=C2=A0</span></strong><br>D<=
+br>Command=C3=A9: 16 October 2023 22:41 BST<br>Attendu le ou avant: 25 Octo=
+ber 2023</td><td></td><td valign=3D"top" style=3D"font-size:0.8125rem;line-=
+height:26px;font-family:Helvetica,Arial,sans-serif;color:rgb(27,28,30)"><st=
+rong style=3D"font-size:1rem;line-height:21px!important">M=C3=A9thode de Pa=
+iement</strong><br>PAYPAL<br></td></tr></tbody></table></td></tr><tr><td co=
+lspan=3D"2"></td></tr></tbody></table></td></tr></tbody></table></td></tr><=
+tr><td style=3D"padding:24px!important"></td></tr><tr><td><table border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"margin:0px a=
+uto;width:358px;float:none!important;height:auto!important"><tbody><tr><td =
+bgcolor=3D"#F5F5F5" style=3D"padding:32px;font-family:Helvetica,Arial,sans-=
+serif"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100=
+%" style=3D"margin:0px auto;width:310px;float:none!important;height:auto!im=
+portant"><tbody><tr><th align=3D"left" height=3D"45" valign=3D"top" width=
+=3D"60%" style=3D"font-family:Helvetica,Arial,sans-serif;font-size:16px;fon=
+t-weight:normal"><strong style=3D"font-size:1rem">Nom de l&#39;article</str=
+ong></th><th align=3D"left" height=3D"45" valign=3D"top" width=3D"20%" styl=
+e=3D"font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:norm=
+al"><strong style=3D"font-size:1rem">Quantit=C3=A9</strong></th><th align=
+=3D"right" height=3D"45" valign=3D"top" width=3D"20%" style=3D"font-family:=
+Helvetica,Arial,sans-serif;font-size:16px;font-weight:normal"><strong style=
+=3D"font-size:1rem">Prix</strong></th></tr><tr><td bgcolor=3D"#434343" cols=
+pan=3D"3" height=3D"1"></td></tr><tr><td colspan=3D"3" height=3D"32"></td><=
+/tr><tr><td align=3D"left" valign=3D"top"><table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%"><tbody><tr><td><table border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"><tbody><tr><td><a href=
+=3D"https://reporting.sizeofficial.de/cgi-bin/rr/nobook:638456,nosent:13289=
+41,nosrep:281097,nored:ULKye1AUzGceVjHgbH_Brh807J-_xF81oooTjE2k4c0=3D/https=
+://www.sizeofficial.fr/product/blanc-jordan-air-3-retro/645577_sizefr_sizef=
+r/?utm_source=3DRedEye&amp;utm_medium=3DEmail&amp;utm_campaign=3DTransactio=
+nal%20API&amp;utm_content=3Dtransorderconffr&amp;utm_term=3Dtransorderconff=
+r" id=3D"m_125317283985178659m_-4869339261258069956prod1" style=3D"color:rg=
+b(66,133,244)" target=3D"_blank"><img alt=3D"" src=3D"https://i8.amplience.=
+net/i/jpl/sz_645577_a?qlt=3D92" width=3D"100%" style=3D"display:block;max-w=
+idth:150px!important"></a></td></tr><tr><td style=3D"font-size:1rem;line-he=
+ight:24px;font-family:Helvetica,Arial,sans-serif;color:rgb(38,38,38)">Jorda=
+n Jordan Air 3 Retro<br>Taille: 42.5</td></tr></tbody></table></td></tr><tr=
+><td height=3D"16"></td></tr></tbody></table></td><td align=3D"left" valign=
+=3D"top" style=3D"font-size:1rem;line-height:21px;font-family:Helvetica,Ari=
+al,sans-serif;color:rgb(38,38,38)">1</td><td align=3D"right" valign=3D"top"=
+ style=3D"font-size:1rem;line-height:21px;font-family:Helvetica,Arial,sans-=
+serif;font-weight:normal;color:rgb(38,38,38)">210.00=E2=82=AC</td></tr><tr>=
+<td colspan=3D"3" height=3D"32"></td></tr><tr><td align=3D"left" valign=3D"=
+top"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+><tbody><tr><td><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wid=
+th=3D"100%"><tbody><tr><td width=3D"150"><a href=3D"https://reporting.sizeo=
+fficial.de/cgi-bin/rr/nobook:638457,nosent:1328941,nosrep:281097,nored:ULKy=
+e1AUzGceVjHgbH_Brh807J-_xF81oooTjE2k4c0=3D/https://www.sizeofficial.fr/prod=
+uct/blanc-jordan-air-3-retro/645577_sizefr_sizefr/?utm_source=3DRedEye&amp;=
+utm_medium=3DEmail&amp;utm_campaign=3DTransactional%20API&amp;utm_content=
+=3Dtransorderconffr&amp;utm_term=3Dtransorderconffr" style=3D"color:rgb(66,=
+133,244)" target=3D"_blank"><img alt=3D"" src=3D"https://i8.amplience.net/i=
+/jpl/sz_645577_a?qlt=3D92" width=3D"100%" style=3D"display:block;max-width:=
+150px!important"></a></td></tr><tr><td style=3D"font-size:1rem;line-height:=
+24px;font-family:Helvetica,Arial,sans-serif;color:rgb(38,38,38)">Jordan Jor=
+dan Air 3 Retro<br>Taille: 44</td></tr></tbody></table></td></tr><tr><td he=
+ight=3D"16"></td></tr></tbody></table></td><td align=3D"left" valign=3D"top=
+" style=3D"font-size:1rem;line-height:21px;font-family:Helvetica,Arial,sans=
+-serif;color:rgb(38,38,38)">1</td><td align=3D"right" valign=3D"top" style=
+=3D"font-size:1rem;line-height:21px;font-family:Helvetica,Arial,sans-serif;=
+font-weight:normal;color:rgb(38,38,38)">210.00=E2=82=AC</td></tr><tr><td va=
+lign=3D"top"></td><td align=3D"left" valign=3D"top" style=3D"font-size:1rem=
+;line-height:35px;font-family:Helvetica,Arial,sans-serif">Sous-total</td><t=
+d align=3D"right" valign=3D"top" style=3D"font-size:1rem;line-height:35px;f=
+ont-family:Helvetica,Arial,sans-serif">420.00=E2=82=AC</td></tr><tr><td val=
+ign=3D"top"></td><td align=3D"left" valign=3D"top" style=3D"font-size:1rem;=
+line-height:35px">Livraison</td><td align=3D"right" valign=3D"top" style=3D=
+"font-size:1rem;font-weight:normal;line-height:35px">0.00=E2=82=AC</td></tr=
+><tr><td colspan=3D"3" valign=3D"top"></td></tr><tr><td valign=3D"top"></td=
+><td align=3D"left" valign=3D"top" style=3D"font-size:1rem;line-height:35px=
+;font-family:Helvetica,Arial,sans-serif;font-weight:bold">Total</td><td ali=
+gn=3D"right" valign=3D"top" style=3D"font-size:1rem;line-height:35px;font-f=
+amily:Helvetica,Arial,sans-serif;font-weight:bold">420.00=E2=82=AC</td></tr=
+></tbody></table></td></tr></tbody></table></td></tr><tr><td style=3D"paddi=
+ng:32px"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"5=
+76" style=3D"margin:0px auto;width:310px;float:none!important;height:auto!i=
+mportant"><tbody><tr><td align=3D"center" bgcolor=3D"#1B1C1E"><a href=3D"ht=
+tps://reporting.sizeofficial.de/cgi-bin/rr/nobook:638486,nosent:1328941,nos=
+rep:281097,nored:ULKye1AUzGceVjHgbH_Brh807J-_xF81oooTjE2k4c0=3D/https://www=
+.sizeofficial.fr/myaccount/register/?utm_source=3DRedEye&amp;utm_medium=3DE=
+mail&amp;utm_campaign=3DTransactional%20API&amp;utm_content=3Dtransordercon=
+ffr&amp;utm_term=3Dtransorderconffr&amp;utm_medium=3DEmail&amp;utm_campaign=
+=3D&amp;utm_content=3D&amp;utm_term=3D" title=3D"" style=3D"color:rgb(255,2=
+55,255);font-size:1rem;font-family:Helvetica,Arial,sans-serif;text-decorati=
+on:none;padding:12px 0px;border:2px solid rgb(27,28,30);display:block;width=
+:303.796875px" target=3D"_blank">Cr=C3=A9er un compte</a></td></tr></tbody>=
+</table></td></tr><tr><td align=3D"center" style=3D"font-family:Helvetica,A=
+rial,sans-serif;font-size:1.5rem;line-height:normal">Retours</td></tr><tr><=
+td height=3D"24"></td></tr><tr><td align=3D"center"><table border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" width=3D"90%"><tbody><tr><td style=3D"font=
+-size:0.8125rem;line-height:21px;text-align:center;font-family:Helvetica,Ar=
+ial,sans-serif">Besoin de retourner quelque chose ? Vous trouverez nos inst=
+ructions en consultant nos<span>=C2=A0</span><a href=3D"https://reporting.s=
+izeofficial.de/cgi-bin/rr/nobook:638487,nosent:1328941,nosrep:281097,nored:=
+ULKye1AUzGceVjHgbH_Brh807J-_xF81oooTjE2k4c0=3D/https://www.sizeofficial.fr/=
+customer-service/terms/?utm_source=3DRedEye&amp;utm_medium=3DEmail&amp;utm_=
+campaign=3DTransactional%20API&amp;utm_content=3Dtransorderconffr&amp;utm_t=
+erm=3Dtransorderconffr&amp;utm_medium=3DEmail&amp;utm_campaign=3D&amp;utm_c=
+ontent=3D&amp;utm_term=3D" title=3D"PH" style=3D"color:rgb(0,0,0);font-size=
+:0.8125rem" target=3D"_blank">Termes et Conditions ici</a>.</td></tr></tbod=
+y></table></td></tr><tr><td style=3D"padding:32px"><table border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" width=3D"576" style=3D"margin:0px auto;widt=
+h:310px;float:none!important;height:auto!important"><tbody><tr><td align=3D=
+"center" bgcolor=3D"#1B1C1E"><a href=3D"https://reporting.sizeofficial.de/c=
+gi-bin/rr/nobook:638488,nosent:1328941,nosrep:281097,nored:ULKye1AUzGceVjHg=
+bH_Brh807J-_xF81oooTjE2k4c0=3D/https://www.sizeofficial.fr/pages/faqs/retur=
+ns-and-refunds/all/?utm_source=3DRedEye&amp;utm_medium=3DEmail&amp;utm_camp=
+aign=3DTransactional%20API&amp;utm_content=3Dtransorderconffr&amp;utm_term=
+=3Dtransorderconffr&amp;utm_medium=3DEmail&amp;utm_campaign=3D&amp;utm_cont=
+ent=3D&amp;utm_term=3D" title=3D"" style=3D"color:rgb(255,255,255);font-siz=
+e:1rem;font-family:Helvetica,Arial,sans-serif;text-decoration:none;padding:=
+12px 0px;border:2px solid rgb(27,28,30);display:block;width:303.796875px" t=
+arget=3D"_blank">Retourner mes articles</a></td></tr></tbody></table></td><=
+/tr><tr><td align=3D"center" style=3D"font-family:Helvetica,Arial,sans-seri=
+f;font-size:1.5rem;line-height:normal">Besoin d&#39;aide ?</td></tr><tr><td=
+ height=3D"24"></td></tr><tr><td align=3D"center" style=3D"padding:0px 32px=
+"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"576" sty=
+le=3D"margin:0px auto;width:294px;float:none!important;height:auto!importan=
+t"><tbody><tr><td style=3D"font-size:0.8125rem;line-height:21px;text-align:=
+center;font-family:Helvetica,Arial,sans-serif">Notre =C3=A9quipe d=C3=A9di=
+=C3=A9e au service client est l=C3=A0 pour vous aider avec toutes les quest=
+ions ou demandes que vous avez au sujet de votre commande ou de votre exp=
+=C3=A9rience lors de vos achats avec nous.</td></tr></tbody></table></td></=
+tr><tr><td align=3D"center" style=3D"padding:24px!important"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"576" style=3D"margin:0p=
+x auto;width:310px;float:none!important;height:auto!important"><tbody><tr><=
+td><a href=3D"https://reporting.sizeofficial.de/cgi-bin/rr/nobook:638489,no=
+sent:1328941,nosrep:281097,nored:F_-hu7mBzkekBWk3BnAuVbIuwoSl2SvZNgLf1XdcgV=
+_w0D36BUgvOU1vjFhEybet/https://www.facebook.com/sizeOfficialfr/?utm_source=
+=3DRedEye&amp;utm_medium=3DEmail&amp;utm_campaign=3DTransactional%20API&amp=
+;utm_content=3Dtransorderconffr&amp;utm_term=3Dtransorderconffr" title=3D"F=
+acebook Messenger" style=3D"color:rgb(66,133,244)" target=3D"_blank"><img a=
+lt=3D"Facebook Messenger" src=3D"https://i8.amplience.net/i/jpl/fbm-mobile-=
+ad2cc75277e3542e513b332dd7486d31" width=3D"100%" style=3D"width:0px;max-hei=
+ght:0px;display:none;line-height:0;overflow:hidden"></a></td></tr></tbody><=
+/table></td></tr><tr><td style=3D"padding:32px"><table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" width=3D"576" style=3D"margin:0px auto;width:3=
+10px;float:none!important;height:auto!important"><tbody><tr><td align=3D"ce=
+nter" bgcolor=3D"#1B1C1E"><a href=3D"https://reporting.sizeofficial.de/cgi-=
+bin/rr/nobook:638490,nosent:1328941,nosrep:281097,nored:wzex0H5Ez3RDFbrGdlj=
+0V0M44ajRdrqI2VUDG2bf8Fy0ZFYbhteLCnOnuGwPUBUn/https://www.sizeofficial.fr/c=
+ustomer-service/terms/?utm_source=3DRedEye&amp;utm_medium=3DEmail&amp;utm_c=
+ampaign=3DTransactional%20API&amp;utm_content=3Dtransorderconffr&amp;utm_te=
+rm=3Dtransorderconffr&amp;utm_medium=3DEmail&amp;utm_campaign=3D&amp;utm_co=
+ntent=3D&amp;utm_term=3D" title=3D"" style=3D"color:rgb(255,255,255);font-s=
+ize:1rem;font-family:Helvetica,Arial,sans-serif;text-decoration:none;paddin=
+g:12px 0px;border:2px solid rgb(27,28,30);display:block;width:303.796875px"=
+ target=3D"_blank">Conditions G=C3=A9n=C3=A9ra</a></td></tr></tbody></table=
+></td></tr></tbody></table></div>
+</div>
+
+--000000000000d4a9a70607ebe6b7--
