@@ -1,3 +1,4 @@
-.env
+# Nodes modules
+**/.env
 **/node_modules/**
-
+**/.env.local

@@ -1,0 +1,61 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  discordId String  @id
+  email     String
+  orders    Order[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Marque {
+  id  Int @id @default(autoincrement())
+  name String
+  orders  Order[]
+  templateUrl String
+}
+
+model Answer {
+  id Int @id @default(autoincrement())
+  key String
+  value String
+  order Order @relation(fields: [orderId],references: [id])
+  orderId Int
+}
+
+model ArticleQuestion {
+  id Int @id @default(autoincrement())
+  text String
+  forKey String @unique
+  placeholder String?
+}
+
+model BillingInfoQuestion {
+  id Int @id @default(autoincrement())
+  text String
+  forKey String @unique
+}
+
+model Order {
+  id Int @id @default(autoincrement())
+  emailAdressee String?
+  answers Answer[]
+  user User @relation(fields: [userId],references: [discordId])
+  userId String
+  marque Marque @relation(fields: [marqueId], references: [id])
+  marqueId Int
+}
+

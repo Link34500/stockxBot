@@ -1,0 +1,62 @@
+{
+  "generics": {
+    "sucess-mail-send": {
+      "title": "Email Sent - Order Complete",
+      "description": "The email has been successfully sent for the requested order.",
+      "color": "Green"
+    },
+    "confirm-order": {
+      "title": "Finalize the order",
+      "description": "All that's left is to finalize the order!"
+    },
+    "order-timed-out": {
+      "title": "Order Expired",
+      "description": "Your order expired after 30 seconds of inactivity. Please start over.",
+      "color": "#FF0000"
+    }
+  },
+  "commands": {
+    "generate": {
+      "marque-select": {
+        "placeholder": "Please select a brand"
+      },
+      "ask-marque": {
+        "title": "New Order",
+        "description": "Choose a brand for your order",
+        "color": "#0099ff"
+      },
+      "ask-billing-info": {
+        "title": "Billing Information",
+        "description": "Enter the billing information",
+        "color": "#0099ff"
+      }
+    }
+  },
+  "ui": {
+    "create-account": {
+      "sucess": {
+        "title": "Account Created Successfully",
+        "description": "You can now place orders",
+        "color": "#0099ff"
+      }
+    },
+    "billing-info": {
+      "sucess-send": {
+        "title": "Billing Information Saved",
+        "description": "Your billing information has been successfully saved"
+      }
+    }
+  },
+  "errors": {
+    "not-order-found": {
+      "title": "We couldn't find your order...",
+      "description": "Please try creating your order again. An error occurred, and we couldn't find it.",
+      "color": "#FF0000"
+    },
+    "not-account": {
+      "title": "Error",
+      "description": "You must have an account to place an order",
+      "color": "#0099ff"
+    }
+  }
+}
