@@ -18,7 +18,7 @@ interface NavbarProps {
 
 export function Navbar({ navLinks }: NavbarProps) {
   return (
-    <div className="bg-green-500/10 p-5 w-full rounded-2xl border-2 border-green-500/60">
+    <div className="bg-green-500/10 p-4 px-12 min-w-lg rounded-2xl border-2 border-green-500/60">
       <NavigationMenu>
         <NavigationMenuList className="flex-wrap">
           {navLinks.map((navLink, idx) => (

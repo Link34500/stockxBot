@@ -4768,7 +4768,7 @@ export namespace Prisma {
     id: number
     text: string
     forKey: string
-    placeholder: string
+    placeholder: string | null
     _count: ArticleQuestionCountAggregateOutputType | null
     _avg: ArticleQuestionAvgAggregateOutputType | null
     _sum: ArticleQuestionSumAggregateOutputType | null
@@ -4827,7 +4827,7 @@ export namespace Prisma {
       id: number
       text: string
       forKey: string
-      placeholder: string
+      placeholder: string | null
     }, ExtArgs["result"]["articleQuestion"]>
     composites: {}
   }
@@ -8016,14 +8016,14 @@ export namespace Prisma {
     id?: IntFilter<"ArticleQuestion"> | number
     text?: StringFilter<"ArticleQuestion"> | string
     forKey?: StringFilter<"ArticleQuestion"> | string
-    placeholder?: StringFilter<"ArticleQuestion"> | string
+    placeholder?: StringNullableFilter<"ArticleQuestion"> | string | null
   }
 
   export type ArticleQuestionOrderByWithRelationInput = {
     id?: SortOrder
     text?: SortOrder
     forKey?: SortOrder
-    placeholder?: SortOrder
+    placeholder?: SortOrderInput | SortOrder
   }
 
   export type ArticleQuestionWhereUniqueInput = Prisma.AtLeast<{
@@ -8033,14 +8033,14 @@ export namespace Prisma {
     OR?: ArticleQuestionWhereInput[]
     NOT?: ArticleQuestionWhereInput | ArticleQuestionWhereInput[]
     text?: StringFilter<"ArticleQuestion"> | string
-    placeholder?: StringFilter<"ArticleQuestion"> | string
+    placeholder?: StringNullableFilter<"ArticleQuestion"> | string | null
   }, "id" | "forKey">
 
   export type ArticleQuestionOrderByWithAggregationInput = {
     id?: SortOrder
     text?: SortOrder
     forKey?: SortOrder
-    placeholder?: SortOrder
+    placeholder?: SortOrderInput | SortOrder
     _count?: ArticleQuestionCountOrderByAggregateInput
     _avg?: ArticleQuestionAvgOrderByAggregateInput
     _max?: ArticleQuestionMaxOrderByAggregateInput
@@ -8055,7 +8055,7 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"ArticleQuestion"> | number
     text?: StringWithAggregatesFilter<"ArticleQuestion"> | string
     forKey?: StringWithAggregatesFilter<"ArticleQuestion"> | string
-    placeholder?: StringWithAggregatesFilter<"ArticleQuestion"> | string
+    placeholder?: StringNullableWithAggregatesFilter<"ArticleQuestion"> | string | null
   }
 
   export type BillingInfoQuestionWhereInput = {
@@ -8304,47 +8304,47 @@ export namespace Prisma {
   export type ArticleQuestionCreateInput = {
     text: string
     forKey: string
-    placeholder: string
+    placeholder?: string | null
   }
 
   export type ArticleQuestionUncheckedCreateInput = {
     id?: number
     text: string
     forKey: string
-    placeholder: string
+    placeholder?: string | null
   }
 
   export type ArticleQuestionUpdateInput = {
     text?: StringFieldUpdateOperationsInput | string
     forKey?: StringFieldUpdateOperationsInput | string
-    placeholder?: StringFieldUpdateOperationsInput | string
+    placeholder?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type ArticleQuestionUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     text?: StringFieldUpdateOperationsInput | string
     forKey?: StringFieldUpdateOperationsInput | string
-    placeholder?: StringFieldUpdateOperationsInput | string
+    placeholder?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type ArticleQuestionCreateManyInput = {
     id?: number
     text: string
     forKey: string
-    placeholder: string
+    placeholder?: string | null
   }
 
   export type ArticleQuestionUpdateManyMutationInput = {
     text?: StringFieldUpdateOperationsInput | string
     forKey?: StringFieldUpdateOperationsInput | string
-    placeholder?: StringFieldUpdateOperationsInput | string
+    placeholder?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type ArticleQuestionUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     text?: StringFieldUpdateOperationsInput | string
     forKey?: StringFieldUpdateOperationsInput | string
-    placeholder?: StringFieldUpdateOperationsInput | string
+    placeholder?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type BillingInfoQuestionCreateInput = {
@@ -8610,6 +8610,25 @@ export namespace Prisma {
     orderId?: SortOrder
   }
 
+  export type StringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | null
+    notIn?: string[] | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
+  }
+
   export type ArticleQuestionCountOrderByAggregateInput = {
     id?: SortOrder
     text?: SortOrder
@@ -8639,6 +8658,23 @@ export namespace Prisma {
     id?: SortOrder
   }
 
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | null
+    notIn?: string[] | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
   export type BillingInfoQuestionCountOrderByAggregateInput = {
     id?: SortOrder
     text?: SortOrder
@@ -8665,20 +8701,6 @@ export namespace Prisma {
     id?: SortOrder
   }
 
-  export type StringNullableFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | null
-    notIn?: string[] | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    not?: NestedStringNullableFilter<$PrismaModel> | string | null
-  }
-
   export type AnswerListRelationFilter = {
     every?: AnswerWhereInput
     some?: AnswerWhereInput
@@ -8693,11 +8715,6 @@ export namespace Prisma {
   export type MarqueScalarRelationFilter = {
     is?: MarqueWhereInput
     isNot?: MarqueWhereInput
-  }
-
-  export type SortOrderInput = {
-    sort: SortOrder
-    nulls?: NullsOrder
   }
 
   export type AnswerOrderByRelationAggregateInput = {
@@ -8733,23 +8750,6 @@ export namespace Prisma {
   export type OrderSumOrderByAggregateInput = {
     id?: SortOrder
     marqueId?: SortOrder
-  }
-
-  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | null
-    notIn?: string[] | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedStringNullableFilter<$PrismaModel>
-    _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
   export type OrderCreateNestedManyWithoutUserInput = {
@@ -8866,6 +8866,10 @@ export namespace Prisma {
     update?: XOR<XOR<OrderUpdateToOneWithWhereWithoutAnswersInput, OrderUpdateWithoutAnswersInput>, OrderUncheckedUpdateWithoutAnswersInput>
   }
 
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
+  }
+
   export type AnswerCreateNestedManyWithoutOrderInput = {
     create?: XOR<AnswerCreateWithoutOrderInput, AnswerUncheckedCreateWithoutOrderInput> | AnswerCreateWithoutOrderInput[] | AnswerUncheckedCreateWithoutOrderInput[]
     connectOrCreate?: AnswerCreateOrConnectWithoutOrderInput | AnswerCreateOrConnectWithoutOrderInput[]
@@ -8890,10 +8894,6 @@ export namespace Prisma {
     connectOrCreate?: AnswerCreateOrConnectWithoutOrderInput | AnswerCreateOrConnectWithoutOrderInput[]
     createMany?: AnswerCreateManyOrderInputEnvelope
     connect?: AnswerWhereUniqueInput | AnswerWhereUniqueInput[]
-  }
-
-  export type NullableStringFieldUpdateOperationsInput = {
-    set?: string | null
   }
 
   export type AnswerUpdateManyWithoutOrderNestedInput = {

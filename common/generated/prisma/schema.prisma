@@ -37,10 +37,10 @@ model Answer {
 }
 
 model ArticleQuestion {
-  id          Int    @id @default(autoincrement())
+  id          Int     @id @default(autoincrement())
   text        String
-  forKey      String @unique
-  placeholder String
+  forKey      String  @unique
+  placeholder String?
 }
 
 model BillingInfoQuestion {

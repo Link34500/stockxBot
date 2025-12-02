@@ -1,3 +1,12 @@
+import { Section, SectionTitle } from "@/components/shared/Section";
+
 export default function Home() {
-  return <h1>Hello World</h1>;
+  return (
+    <main>
+      <Section>
+        <SectionTitle>StocxBot Panel</SectionTitle>
+        <div></div>
+      </Section>
+    </main>
+  );
 }

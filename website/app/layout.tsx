@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/features/Navbar";
+import { Navbar } from "@/components/shared/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,13 +28,17 @@ export default function RootLayout({
       label: "Acceuil",
       href: "/",
     },
+    {
+      label: "Marques",
+      href: "/marques",
+    },
   ];
   return (
     <html lang="en" className="dark h-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased h-full`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased h-full p-8`}
       >
-        <header className="flex w-full">
+        <header className="flex w-full justify-center">
           <Navbar navLinks={navLinks} />
         </header>
         {children}

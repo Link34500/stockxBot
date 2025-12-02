@@ -6,8 +6,10 @@ const globalForPrisma = global as unknown as {
   adapter: PrismaBetterSqlite3;
 };
 
-const adapter = new PrismaBetterSqlite3({ url: process.env.DATABASE_URL! });
-export const prisma = new PrismaClient({ adapter });
+const adapter =
+  globalForPrisma.adapter ||
+  new PrismaBetterSqlite3({ url: process.env.DATABASE_URL! });
+export const prisma = globalForPrisma.prisma || new PrismaClient({ adapter });
 
 if (process.env.NODE_ENV !== "production") {
   globalForPrisma.adapter = adapter;
